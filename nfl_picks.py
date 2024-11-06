@@ -1,5 +1,5 @@
 
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGroupBox, QComboBox, QLineEdit
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGroupBox, QComboBox, QLineEdit, QScrollBar
 from PyQt5 import uic
 import sys
 
@@ -11,10 +11,21 @@ class UI(QMainWindow):
         # load the ui file
         uic.loadUi("nfl_picks.ui", self)
         self.setWindowTitle("NFL Picks")
+        self.setFixedWidth(850)
         
-        # WIDGETS
+        
+        # Geometry
+        #   slate visible: main(50, 50, 850, 910), test(580, 824, 75, 23)
+        #                  submit(480, 824, 70, 25), year(300, 824, 70, 25), week(390, 824, 70, 25)
+        #   slate hidden:  main(50, 50, 850, 500), test(580, 450, 75, 23)
+        #                  submit(480, 450, 70, 25), year(300, 450, 70, 25), week(390, 450, 70, 25)
+
+        
+        # *********************************** WIDGETS *************************************
         # buttons
         self.submit = self.findChild(QPushButton, "submitButton")
+        # REMOVE THIS TEST BUTTON
+        self.toggle = self.findChild(QPushButton, "toggleGroup")
         
         # combo boxes
         self.year = self.findChild(QComboBox, "year")
@@ -163,19 +174,32 @@ class UI(QMainWindow):
         self.hScore15 = self.findChild(QLineEdit, "hScore15")
         self.hScore16 = self.findChild(QLineEdit, "hScore16")
         self.hScore17 = self.findChild(QLineEdit, "hScore17")
-        
+        # *********************************** END WIDGETS *************************************
         
         # actions
         self.year.addItems([str(year) for year in range(1999, 2025)])
         self.week.addItems([str(week) for week in range(1,19)])
+        self.slate.setVisible(False)
+        self.setPosition(0)
+        self.toggle.clicked.connect(self.changeGroupVisibility)
         self.submit.clicked.connect(self.getSlate)
-        self.home13.setVisible(False)
-        self.away9.setVisible(False)
         
         
         
         # show the app
         self.show()
+        
+    def changeGroupVisibility(self):
+        if self.slate.isVisible():
+            # self.setGeometry(50, 50, 850, 500)
+            # self.toggle.setGeometry(580, 450, 75, 23)
+            self.setPosition(0)
+            self.slate.setVisible(False)
+        else:
+            # self.setGeometry(50, 50, 850, 910)
+            # self.toggle.setGeometry(580, 824, 75, 23)
+            self.setPosition(1)
+            self.slate.setVisible(True)
         
     def getSlate(self):
         
@@ -185,9 +209,24 @@ class UI(QMainWindow):
         #     self.buttonBox.setVisible(True)
         title = f"{self.year.currentText()} - week {self.week.currentText()}"
         self.slate.setTitle(title)
-        self.home13.setVisible(True)
-        self.away9.setVisible(True)
-       
+        
+    def setPosition(self, size):
+        if size == 0:
+            # small window
+            self.setGeometry(self.x(), self.y(), 850, 500)
+            self.toggle.setGeometry(580, 450, 75, 23)
+            self.submit.setGeometry(480, 450, 70, 25)
+            self.year.setGeometry(300, 450, 70, 25)
+            self.week.setGeometry(390, 450, 70, 25)
+        else:
+            # large window
+            self.setGeometry(self.x(), self.y(), 850, 910)
+            self.toggle.setGeometry(580, 824, 75, 23)
+            self.submit.setGeometry(480, 824, 70, 25)
+            self.year.setGeometry(300, 824, 70, 25)
+            self.week.setGeometry(390, 824, 70, 25)
+        
+
         
 app = QApplication(sys.argv)
 UIWindow = UI()

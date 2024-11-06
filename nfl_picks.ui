@@ -88,7 +88,7 @@
      </font>
     </property>
     <property name="title">
-     <string>schedule</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -108,10 +108,10 @@
       </font>
      </property>
      <property name="text">
-      <string>Minnesota</string>
+      <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="ot1">
+    <widget class="QLabel" name="ot0">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -126,7 +126,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -147,7 +147,7 @@
       </font>
      </property>
      <property name="text">
-      <string>LA Rams</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="aScore0">
@@ -165,7 +165,7 @@
       </font>
      </property>
      <property name="text">
-      <string>20</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore0">
@@ -183,7 +183,7 @@
       </font>
      </property>
      <property name="text">
-      <string>30</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away1">
@@ -201,7 +201,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Indianapolis</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home1">
@@ -219,7 +219,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Baltimore</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore1">
@@ -237,10 +237,10 @@
       </font>
      </property>
      <property name="text">
-      <string>37</string>
+      <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="ot2">
+    <widget class="QLabel" name="ot1">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -276,7 +276,7 @@
       </font>
      </property>
      <property name="text">
-      <string>14</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away2">
@@ -294,7 +294,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home2">
@@ -312,7 +312,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore2">
@@ -325,7 +325,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="ot2_2">
+    <widget class="QLabel" name="ot2">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -340,7 +340,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -361,7 +361,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away3">
@@ -379,7 +379,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home3">
@@ -397,7 +397,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore3">
@@ -425,7 +425,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -446,7 +446,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away4">
@@ -464,7 +464,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home4">
@@ -482,7 +482,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore4">
@@ -510,7 +510,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -531,7 +531,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away5">
@@ -549,7 +549,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home5">
@@ -567,7 +567,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore5">
@@ -595,7 +595,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -616,7 +616,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away6">
@@ -634,7 +634,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home6">
@@ -652,7 +652,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore6">
@@ -680,7 +680,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -701,7 +701,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away7">
@@ -719,7 +719,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home7">
@@ -737,7 +737,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore7">
@@ -765,7 +765,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -786,7 +786,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away8">
@@ -804,7 +804,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home8">
@@ -822,7 +822,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore8">
@@ -850,7 +850,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -871,7 +871,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away9">
@@ -889,7 +889,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home9">
@@ -907,7 +907,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore9">
@@ -935,7 +935,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -956,7 +956,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away10">
@@ -974,7 +974,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home10">
@@ -992,7 +992,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore10">
@@ -1020,7 +1020,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1041,7 +1041,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away11">
@@ -1059,7 +1059,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home11">
@@ -1077,7 +1077,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore11">
@@ -1105,7 +1105,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1126,7 +1126,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away12">
@@ -1144,7 +1144,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home12">
@@ -1162,7 +1162,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore12">
@@ -1190,7 +1190,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1211,7 +1211,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away13">
@@ -1229,7 +1229,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home13">
@@ -1247,7 +1247,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore13">
@@ -1275,7 +1275,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1296,7 +1296,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away14">
@@ -1314,7 +1314,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home14">
@@ -1332,7 +1332,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore14">
@@ -1360,7 +1360,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1381,7 +1381,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away15">
@@ -1399,7 +1399,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home15">
@@ -1417,7 +1417,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore15">
@@ -1445,7 +1445,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1466,7 +1466,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day0">
@@ -1484,7 +1484,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Thu</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="result0">
@@ -1504,7 +1504,7 @@
       </font>
      </property>
      <property name="text">
-      <string>C</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1527,7 +1527,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1548,7 +1548,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day2">
@@ -1566,7 +1566,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day3">
@@ -1584,7 +1584,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day5">
@@ -1602,7 +1602,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day4">
@@ -1620,7 +1620,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day6">
@@ -1638,7 +1638,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day8">
@@ -1656,7 +1656,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day7">
@@ -1674,7 +1674,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day9">
@@ -1692,7 +1692,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day10">
@@ -1710,7 +1710,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day11">
@@ -1728,7 +1728,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day12">
@@ -1746,7 +1746,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day13">
@@ -1764,7 +1764,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day14">
@@ -1782,7 +1782,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="day15">
@@ -1800,7 +1800,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home16">
@@ -1818,7 +1818,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="ot16">
@@ -1836,7 +1836,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -1857,7 +1857,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away16">
@@ -1875,7 +1875,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="away17">
@@ -1893,7 +1893,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="aScore16">
@@ -1911,7 +1911,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="home17">
@@ -1929,7 +1929,7 @@
       </font>
      </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore16">
@@ -1957,7 +1957,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Sun</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore17">
@@ -1985,7 +1985,7 @@
       </font>
      </property>
      <property name="text">
-      <string>OT</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2006,7 +2006,7 @@
       </font>
      </property>
      <property name="text">
-      <string>88</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="result2">
@@ -2026,7 +2026,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2049,7 +2049,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2072,7 +2072,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2095,7 +2095,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2118,7 +2118,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2141,7 +2141,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2164,7 +2164,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2187,7 +2187,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2210,7 +2210,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2233,7 +2233,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2256,7 +2256,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2279,7 +2279,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2302,7 +2302,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2325,7 +2325,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2348,7 +2348,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -2371,12 +2371,25 @@
       </font>
      </property>
      <property name="text">
-      <string>X</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="toggleGroup">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>824</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>group box</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
