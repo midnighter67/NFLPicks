@@ -1,5 +1,5 @@
 
-from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGroupBox, QComboBox
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGroupBox, QComboBox, QLineEdit
 from PyQt5 import uic
 import sys
 
@@ -64,7 +64,7 @@ class UI(QMainWindow):
         self.ot16 = self.findChild(QLabel, "ot16")
         self.ot17 = self.findChild(QLabel, "ot17")
         
-        # result labels
+        # pick result labels
         self.result0 = self.findChild(QLabel, "result0")
         self.result1 = self.findChild(QLabel, "result1")
         self.result2 = self.findChild(QLabel, "result2")
@@ -84,7 +84,7 @@ class UI(QMainWindow):
         self.result16 = self.findChild(QLabel, "result16")
         self.result17 = self.findChild(QLabel, "result17")
         
-        # away labels
+        # away team labels
         self.away0 = self.findChild(QLabel, "away0")
         self.away1 = self.findChild(QLabel, "away1")
         self.away2 = self.findChild(QLabel, "away2")
@@ -104,7 +104,7 @@ class UI(QMainWindow):
         self.away16 = self.findChild(QLabel, "away16")
         self.away17 = self.findChild(QLabel, "away17")
         
-        # home labels
+        # home team labels
         self.home0 = self.findChild(QLabel, "home0")
         self.home1 = self.findChild(QLabel, "home1")
         self.home2 = self.findChild(QLabel, "home2")
@@ -123,6 +123,46 @@ class UI(QMainWindow):
         self.home15 = self.findChild(QLabel, "home15")
         self.home16 = self.findChild(QLabel, "home16")
         self.home17 = self.findChild(QLabel, "home17")
+        
+        # away score line edit boxes
+        self.aScore0 = self.findChild(QLineEdit, "aScore0")
+        self.aScore1 = self.findChild(QLineEdit, "aScore1")
+        self.aScore2 = self.findChild(QLineEdit, "aScore2")
+        self.aScore3 = self.findChild(QLineEdit, "aScore3")
+        self.aScore4 = self.findChild(QLineEdit, "aScore4")
+        self.aScore5 = self.findChild(QLineEdit, "aScore5")
+        self.aScore6 = self.findChild(QLineEdit, "aScore6")
+        self.aScore7 = self.findChild(QLineEdit, "aScore7")
+        self.aScore8 = self.findChild(QLineEdit, "aScore8")
+        self.aScore9 = self.findChild(QLineEdit, "aScore9")
+        self.aScore10 = self.findChild(QLineEdit, "aScore10")
+        self.aScore11 = self.findChild(QLineEdit, "aScore11")
+        self.aScore12 = self.findChild(QLineEdit, "aScore12")
+        self.aScore13 = self.findChild(QLineEdit, "aScore13")
+        self.aScore14 = self.findChild(QLineEdit, "aScore14")
+        self.aScore15 = self.findChild(QLineEdit, "aScore15")
+        self.aScore16 = self.findChild(QLineEdit, "aScore16")
+        self.aScore17 = self.findChild(QLineEdit, "aScore17")
+        
+        # home score line edit boxes
+        self.hScore0 = self.findChild(QLineEdit, "hScore0")
+        self.hScore1 = self.findChild(QLineEdit, "hScore1")
+        self.hScore2 = self.findChild(QLineEdit, "hScore2")
+        self.hScore3 = self.findChild(QLineEdit, "hScore3")
+        self.hScore4 = self.findChild(QLineEdit, "hScore4")
+        self.hScore5 = self.findChild(QLineEdit, "hScore5")
+        self.hScore6 = self.findChild(QLineEdit, "hScore6")
+        self.hScore7 = self.findChild(QLineEdit, "hScore7")
+        self.hScore8 = self.findChild(QLineEdit, "hScore8")
+        self.hScore9 = self.findChild(QLineEdit, "hScore9")
+        self.hScore10 = self.findChild(QLineEdit, "hScore10")
+        self.hScore11 = self.findChild(QLineEdit, "hScore11")
+        self.hScore12 = self.findChild(QLineEdit, "hScore12")
+        self.hScore13 = self.findChild(QLineEdit, "hScore13")
+        self.hScore14 = self.findChild(QLineEdit, "hScore14")
+        self.hScore15 = self.findChild(QLineEdit, "hScore15")
+        self.hScore16 = self.findChild(QLineEdit, "hScore16")
+        self.hScore17 = self.findChild(QLineEdit, "hScore17")
         
         
         # actions
