@@ -84,11 +84,53 @@ class UI(QMainWindow):
         self.result16 = self.findChild(QLabel, "result16")
         self.result17 = self.findChild(QLabel, "result17")
         
+        # away labels
+        self.away0 = self.findChild(QLabel, "away0")
+        self.away1 = self.findChild(QLabel, "away1")
+        self.away2 = self.findChild(QLabel, "away2")
+        self.away3 = self.findChild(QLabel, "away3")
+        self.away4 = self.findChild(QLabel, "away4")
+        self.away5 = self.findChild(QLabel, "away5")
+        self.away6 = self.findChild(QLabel, "away6")
+        self.away7 = self.findChild(QLabel, "away7")
+        self.away8 = self.findChild(QLabel, "away8")
+        self.away9 = self.findChild(QLabel, "away9")
+        self.away10 = self.findChild(QLabel, "away10")
+        self.away11 = self.findChild(QLabel, "away11")
+        self.away12 = self.findChild(QLabel, "away12")
+        self.away13 = self.findChild(QLabel, "away13")
+        self.away14 = self.findChild(QLabel, "away14")
+        self.away15 = self.findChild(QLabel, "away15")
+        self.away16 = self.findChild(QLabel, "away16")
+        self.away17 = self.findChild(QLabel, "away17")
+        
+        # home labels
+        self.home0 = self.findChild(QLabel, "home0")
+        self.home1 = self.findChild(QLabel, "home1")
+        self.home2 = self.findChild(QLabel, "home2")
+        self.home3 = self.findChild(QLabel, "home3")
+        self.home4 = self.findChild(QLabel, "home4")
+        self.home5 = self.findChild(QLabel, "home5")
+        self.home6 = self.findChild(QLabel, "home6")
+        self.home7 = self.findChild(QLabel, "home7")
+        self.home8 = self.findChild(QLabel, "home8")
+        self.home9 = self.findChild(QLabel, "home9")
+        self.home10 = self.findChild(QLabel, "home10")
+        self.home11 = self.findChild(QLabel, "home11")
+        self.home12 = self.findChild(QLabel, "home12")
+        self.home13 = self.findChild(QLabel, "home13")
+        self.home14 = self.findChild(QLabel, "home14")
+        self.home15 = self.findChild(QLabel, "home15")
+        self.home16 = self.findChild(QLabel, "home16")
+        self.home17 = self.findChild(QLabel, "home17")
+        
+        
         # actions
         self.year.addItems([str(year) for year in range(1999, 2025)])
         self.week.addItems([str(week) for week in range(1,19)])
         self.submit.clicked.connect(self.getSlate)
-        self.result12.setVisible(False)
+        self.home13.setVisible(False)
+        self.away9.setVisible(False)
         
         
         
@@ -103,7 +145,8 @@ class UI(QMainWindow):
         #     self.buttonBox.setVisible(True)
         title = f"{self.year.currentText()} - week {self.week.currentText()}"
         self.slate.setTitle(title)
-        self.result12.setVisible(True)
+        self.home13.setVisible(True)
+        self.away9.setVisible(True)
        
         
 app = QApplication(sys.argv)
