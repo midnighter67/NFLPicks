@@ -9,3 +9,9 @@ load_dotenv()
 
 Base = declarative_base()
 engine = create_engine(os.getenv("CONNECTION_STRING"))
+metadata = MetaData()
+metadata.reflect(bind=engine)
+matchups = Table('picks', metadata, autoload_with=engine)
+Session = sessionmaker(bind=engine)
+# session = Session()
+

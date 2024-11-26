@@ -2,7 +2,21 @@
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGroupBox, QComboBox, QLineEdit, QScrollBar
 from PyQt5 import uic
 import sys
+import psycopg2
+from sqlalchemy import create_engine, MetaData, Table, insert
+from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.ext.automap import automap_base
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+
+Base = declarative_base()
+engine = create_engine(os.getenv("CONNECTION_STRING"))
+metadata = MetaData()
+metadata.reflect(bind=engine)
+games = Table('picks', metadata, autoload_with=engine)
+Session = sessionmaker(bind=engine)
 
 class UI(QMainWindow):
     def __init__(self):
@@ -217,6 +231,11 @@ class UI(QMainWindow):
         week = self.week.currentText()
         year = self.year.currentText()
         # print("week = ", week, ", year = ", year)
+        session = Session()
+        slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
+        for game in slate:
+            print("game id = ", game[1])
+        
         
         
         
@@ -240,8 +259,6 @@ class UI(QMainWindow):
             self.submit.setGeometry(480, 824, 70, 25)
             self.year.setGeometry(300, 824, 70, 25)
             self.week.setGeometry(390, 824, 70, 25)
-            
-    def getSlate(self, week, year):
         
         
 
