@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGro
 from PyQt5 import uic
 import sys
 
+
 class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
@@ -19,7 +20,8 @@ class UI(QMainWindow):
         #                  submit(480, 824, 70, 25), year(300, 824, 70, 25), week(390, 824, 70, 25)
         #   slate hidden:  main(50, 50, 850, 500), test(580, 450, 75, 23)
         #                  submit(480, 450, 70, 25), year(300, 450, 70, 25), week(390, 450, 70, 25)
-
+        
+       
         
         # *********************************** WIDGETS *************************************
         # buttons
@@ -176,11 +178,14 @@ class UI(QMainWindow):
         self.hScore17 = self.findChild(QLineEdit, "hScore17")
         # *********************************** END WIDGETS *************************************
         
-        # actions
-        self.year.addItems([str(year) for year in range(1999, 2025)])
-        self.week.addItems([str(week) for week in range(1,19)])
+        # ACTIONS
+        # populate dropdowns
+        self.year.addItems([str(year) for year in range(2021, 2025)])
+        self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
+        # hide weekly schedule
         self.slate.setVisible(False)
         self.setPosition(0)
+        # attach click functions
         self.toggle.clicked.connect(self.changeGroupVisibility)
         self.submit.clicked.connect(self.getSlate)
         
@@ -209,22 +214,35 @@ class UI(QMainWindow):
         #     self.buttonBox.setVisible(True)
         title = f"{self.year.currentText()} - week {self.week.currentText()}"
         self.slate.setTitle(title)
+        week = self.week.currentText()
+        year = self.year.currentText()
+        # print("week = ", week, ", year = ", year)
+        
+        
+        
         
     def setPosition(self, size):
         if size == 0:
             # small window
-            self.setGeometry(self.x(), self.y(), 850, 500)
+            self.setGeometry(self.x()+1, self.y()+31, 850, 500)   # self.setGeometry(self.x(), self.y(), 850, 500)
+            print('x = ', self.x())
+            print ('y = ',self.y())
             self.toggle.setGeometry(580, 450, 75, 23)
             self.submit.setGeometry(480, 450, 70, 25)
             self.year.setGeometry(300, 450, 70, 25)
             self.week.setGeometry(390, 450, 70, 25)
         else:
             # large window
-            self.setGeometry(self.x(), self.y(), 850, 910)
+            self.setGeometry(self.x()+1, self.y()+31, 850, 910)   # self.setGeometry(self.x(), self.y(), 850, 910)
+            print('x = ', self.x())
+            print ('y = ',self.y())
             self.toggle.setGeometry(580, 824, 75, 23)
             self.submit.setGeometry(480, 824, 70, 25)
             self.year.setGeometry(300, 824, 70, 25)
             self.week.setGeometry(390, 824, 70, 25)
+            
+    def getSlate(self, week, year):
+        
         
 
         
