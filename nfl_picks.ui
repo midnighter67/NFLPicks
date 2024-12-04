@@ -147,8 +147,8 @@
       <font>
        <family>Times New Roman</family>
        <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -840,8 +840,8 @@
       <font>
        <family>Times New Roman</family>
        <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -1025,8 +1025,8 @@
       <font>
        <family>Times New Roman</family>
        <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -1633,8 +1633,8 @@
       <font>
        <family>Times New Roman</family>
        <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -2877,8 +2877,8 @@
       <font>
        <family>Times New Roman</family>
        <pointsize>14</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">

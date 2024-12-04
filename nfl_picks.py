@@ -8,6 +8,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.ext.automap import automap_base
 import os
 from dotenv import load_dotenv
+from utilities import teams
 
 load_dotenv()
 
@@ -245,20 +246,38 @@ class UI(QMainWindow):
         
     def getSlate(self):
         
-        # if self.buttonBox.isVisible():
-        #     self.buttonBox.setVisible(False)
-        # else:
-        #     self.buttonBox.setVisible(True)
-        title = f"{self.year.currentText()} - week {self.week.currentText()}"
-        self.slate.setTitle(title)
+        self.resetSlate()
+        
         week = self.week.currentText()
         year = self.year.currentText()
-        # print("week = ", week, ", year = ", year)
+        title = f"{year} - week {week}"
+        self.slate.setTitle(title)
+        
+        row = 0
+        space = 0
         session = Session()
         slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
+        
         for game in slate:
-            #print("game id = ", game[1])
-            print(game)
+            day = game[6]
+            if row == 0:
+                self.day0.setText(game[6][:3])
+                self.away0.setText(teams[game[8]])
+                self.aScore0.setVisible(True)
+                self.aScore0.setText(str(game[9]))
+                self.home0.setText(teams[game[10]])
+                self.hScore0.setVisible(True)
+                self.hScore0.setText(str(game[11]))
+                if game[13] == 1:
+                    self.ot0.setText("OT")
+                if game[17] == 'h':
+                    self.home0.setStyleSheet("font-weight: bold")
+                    self.result0.setText("C" if game[11] > game[9] else "X")
+                elif game[17] == 'a':
+                    self.away0.setStyleSheet("font-weight: bold")
+                    self.result0.setText("C" if game[9] > game[11] else "X")
+            else:
+                pass
         
         
         
@@ -285,6 +304,7 @@ class UI(QMainWindow):
             # self.year.setGeometry(300, 824, 70, 25)
             # self.week.setGeometry(390, 824, 70, 25)
         
+    # clear the form
     def resetSlate(self):
         self.aScore0.setText('')
         self.aScore1.setText('')
@@ -454,6 +474,27 @@ class UI(QMainWindow):
         self.away18.setText('')
         self.away19.setText('')
         
+        self.away0.setStyleSheet("font-weight: normal")
+        self.away1.setStyleSheet("font-weight: normal")
+        self.away2.setStyleSheet("font-weight: normal")
+        self.away3.setStyleSheet("font-weight: normal")
+        self.away4.setStyleSheet("font-weight: normal")
+        self.away5.setStyleSheet("font-weight: normal")
+        self.away6.setStyleSheet("font-weight: normal")
+        self.away7.setStyleSheet("font-weight: normal")
+        self.away8.setStyleSheet("font-weight: normal")
+        self.away9.setStyleSheet("font-weight: normal")
+        self.away10.setStyleSheet("font-weight: normal")
+        self.away11.setStyleSheet("font-weight: normal")
+        self.away12.setStyleSheet("font-weight: normal")
+        self.away13.setStyleSheet("font-weight: normal")
+        self.away14.setStyleSheet("font-weight: normal")
+        self.away15.setStyleSheet("font-weight: normal")
+        self.away16.setStyleSheet("font-weight: normal")
+        self.away17.setStyleSheet("font-weight: normal")
+        self.away18.setStyleSheet("font-weight: normal")
+        self.away19.setStyleSheet("font-weight: normal")
+        
         self.home0.setText('')
         self.home1.setText('')
         self.home2.setText('')
@@ -475,6 +516,28 @@ class UI(QMainWindow):
         self.home18.setText('')
         self.home19.setText('')
         
+        self.home0.setStyleSheet("font-weight: normal")
+        self.home1.setStyleSheet("font-weight: normal")
+        self.home2.setStyleSheet("font-weight: normal")
+        self.home3.setStyleSheet("font-weight: normal")
+        self.home4.setStyleSheet("font-weight: normal")
+        self.home5.setStyleSheet("font-weight: normal")
+        self.home6.setStyleSheet("font-weight: normal")
+        self.home7.setStyleSheet("font-weight: normal")
+        self.home8.setStyleSheet("font-weight: normal")
+        self.home9.setStyleSheet("font-weight: normal")
+        self.home10.setStyleSheet("font-weight: normal")
+        self.home11.setStyleSheet("font-weight: normal")
+        self.home12.setStyleSheet("font-weight: normal")
+        self.home13.setStyleSheet("font-weight: normal")
+        self.home14.setStyleSheet("font-weight: normal")
+        self.home15.setStyleSheet("font-weight: normal")
+        self.home16.setStyleSheet("font-weight: normal")
+        self.home17.setStyleSheet("font-weight: normal")
+        self.home18.setStyleSheet("font-weight: normal")
+        self.home19.setStyleSheet("font-weight: normal")
+    
+    # for testing
     def showAllText(self):
         self.aScore0.setText('0')
         self.aScore1.setText('1')
