@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>910</height>
+    <width>1050</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="submitButton">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>824</y>
+      <x>840</x>
+      <y>230</y>
       <width>70</width>
       <height>25</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QComboBox" name="year">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>824</y>
+      <x>840</x>
+      <y>120</y>
       <width>70</width>
       <height>25</height>
      </rect>
@@ -40,8 +40,8 @@
    <widget class="QComboBox" name="week">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>824</y>
+      <x>840</x>
+      <y>180</y>
       <width>70</width>
       <height>25</height>
      </rect>
@@ -50,8 +50,8 @@
    <widget class="QLabel" name="weekLabel">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>800</y>
+      <x>840</x>
+      <y>156</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -63,8 +63,8 @@
    <widget class="QLabel" name="yearLabel">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>800</y>
+      <x>840</x>
+      <y>96</y>
       <width>71</width>
       <height>20</height>
      </rect>
@@ -79,7 +79,7 @@
       <x>40</x>
       <y>10</y>
       <width>770</width>
-      <height>781</height>
+      <height>841</height>
      </rect>
     </property>
     <property name="font">
@@ -98,12 +98,13 @@
       <rect>
        <x>110</x>
        <y>30</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -114,7 +115,7 @@
     <widget class="QLabel" name="ot0">
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>375</x>
        <y>30</y>
        <width>30</width>
        <height>30</height>
@@ -122,6 +123,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -135,15 +137,18 @@
     <widget class="QLabel" name="home0">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>30</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -153,7 +158,7 @@
     <widget class="QLineEdit" name="aScore0">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>30</y>
        <width>30</width>
        <height>30</height>
@@ -161,17 +166,21 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore0">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>640</x>
        <y>30</y>
        <width>30</width>
        <height>30</height>
@@ -179,11 +188,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away1">
@@ -191,12 +204,13 @@
       <rect>
        <x>110</x>
        <y>70</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -207,14 +221,15 @@
     <widget class="QLabel" name="home1">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>70</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -225,7 +240,7 @@
     <widget class="QLineEdit" name="hScore1">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>640</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -233,17 +248,21 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="ot1">
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>375</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -251,6 +270,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -264,7 +284,7 @@
     <widget class="QLineEdit" name="aScore1">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -272,11 +292,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away2">
@@ -284,12 +308,13 @@
       <rect>
        <x>110</x>
        <y>110</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -300,14 +325,15 @@
     <widget class="QLabel" name="home2">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>110</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -318,17 +344,7 @@
     <widget class="QLineEdit" name="hScore2">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>110</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot2">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -336,6 +352,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot2">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>110</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -349,7 +385,7 @@
     <widget class="QLineEdit" name="aScore2">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -357,11 +393,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away3">
@@ -369,12 +409,13 @@
       <rect>
        <x>110</x>
        <y>150</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -385,14 +426,15 @@
     <widget class="QLabel" name="home3">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>150</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -403,17 +445,7 @@
     <widget class="QLineEdit" name="hScore3">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>150</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot3">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -421,6 +453,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot3">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>150</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -434,7 +486,7 @@
     <widget class="QLineEdit" name="aScore3">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -442,11 +494,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away4">
@@ -454,12 +510,13 @@
       <rect>
        <x>110</x>
        <y>190</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -470,14 +527,15 @@
     <widget class="QLabel" name="home4">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>190</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -488,17 +546,7 @@
     <widget class="QLineEdit" name="hScore4">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>190</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot4">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -506,6 +554,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot4">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>190</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -519,7 +587,7 @@
     <widget class="QLineEdit" name="aScore4">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -527,11 +595,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away5">
@@ -539,12 +611,13 @@
       <rect>
        <x>110</x>
        <y>230</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -555,14 +628,15 @@
     <widget class="QLabel" name="home5">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>230</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -573,17 +647,7 @@
     <widget class="QLineEdit" name="hScore5">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>230</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot5">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -591,6 +655,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot5">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>230</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -604,7 +688,7 @@
     <widget class="QLineEdit" name="aScore5">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -612,11 +696,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away6">
@@ -624,12 +712,13 @@
       <rect>
        <x>110</x>
        <y>270</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -640,14 +729,15 @@
     <widget class="QLabel" name="home6">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>270</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -658,17 +748,7 @@
     <widget class="QLineEdit" name="hScore6">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>270</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot6">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -676,6 +756,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot6">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>270</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -689,7 +789,7 @@
     <widget class="QLineEdit" name="aScore6">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -697,11 +797,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away7">
@@ -709,12 +813,13 @@
       <rect>
        <x>110</x>
        <y>310</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -725,15 +830,18 @@
     <widget class="QLabel" name="home7">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>310</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -743,17 +851,7 @@
     <widget class="QLineEdit" name="hScore7">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>310</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot7">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -761,6 +859,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot7">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>310</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -774,7 +892,7 @@
     <widget class="QLineEdit" name="aScore7">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -782,11 +900,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away8">
@@ -794,12 +916,13 @@
       <rect>
        <x>110</x>
        <y>350</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -810,14 +933,15 @@
     <widget class="QLabel" name="home8">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>350</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -828,17 +952,7 @@
     <widget class="QLineEdit" name="hScore8">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>350</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot8">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -846,6 +960,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot8">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>350</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -859,7 +993,7 @@
     <widget class="QLineEdit" name="aScore8">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -867,11 +1001,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away9">
@@ -879,13 +1017,16 @@
       <rect>
        <x>110</x>
        <y>390</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -895,14 +1036,15 @@
     <widget class="QLabel" name="home9">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>390</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -913,17 +1055,7 @@
     <widget class="QLineEdit" name="hScore9">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>390</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot9">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -931,6 +1063,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot9">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>390</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -944,7 +1096,7 @@
     <widget class="QLineEdit" name="aScore9">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -952,11 +1104,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away10">
@@ -964,12 +1120,13 @@
       <rect>
        <x>110</x>
        <y>430</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -980,14 +1137,15 @@
     <widget class="QLabel" name="home10">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>430</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -998,17 +1156,7 @@
     <widget class="QLineEdit" name="hScore10">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>430</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot10">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -1016,6 +1164,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot10">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>430</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1029,7 +1197,7 @@
     <widget class="QLineEdit" name="aScore10">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -1037,11 +1205,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away11">
@@ -1049,12 +1221,13 @@
       <rect>
        <x>110</x>
        <y>470</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1065,14 +1238,15 @@
     <widget class="QLabel" name="home11">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>470</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1083,17 +1257,7 @@
     <widget class="QLineEdit" name="hScore11">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>470</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot11">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -1101,6 +1265,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot11">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>470</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1114,7 +1298,7 @@
     <widget class="QLineEdit" name="aScore11">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -1122,11 +1306,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away12">
@@ -1134,12 +1322,13 @@
       <rect>
        <x>110</x>
        <y>510</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1150,14 +1339,15 @@
     <widget class="QLabel" name="home12">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>510</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1168,17 +1358,7 @@
     <widget class="QLineEdit" name="hScore12">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>510</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot12">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -1186,6 +1366,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot12">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>510</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1199,7 +1399,7 @@
     <widget class="QLineEdit" name="aScore12">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -1207,11 +1407,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away13">
@@ -1219,12 +1423,13 @@
       <rect>
        <x>110</x>
        <y>550</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1235,14 +1440,15 @@
     <widget class="QLabel" name="home13">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>550</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1253,17 +1459,7 @@
     <widget class="QLineEdit" name="hScore13">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>550</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot13">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -1271,6 +1467,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot13">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>550</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1284,7 +1500,7 @@
     <widget class="QLineEdit" name="aScore13">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -1292,11 +1508,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away14">
@@ -1304,12 +1524,13 @@
       <rect>
        <x>110</x>
        <y>590</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1320,14 +1541,15 @@
     <widget class="QLabel" name="home14">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>590</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1338,17 +1560,7 @@
     <widget class="QLineEdit" name="hScore14">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>590</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot14">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -1356,6 +1568,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot14">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>590</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1369,7 +1601,7 @@
     <widget class="QLineEdit" name="aScore14">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -1377,11 +1609,15 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="away15">
@@ -1389,13 +1625,16 @@
       <rect>
        <x>110</x>
        <y>630</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -1405,14 +1644,15 @@
     <widget class="QLabel" name="home15">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>630</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1423,17 +1663,7 @@
     <widget class="QLineEdit" name="hScore15">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>630</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot15">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -1441,6 +1671,28 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot15">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>630</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1454,7 +1706,7 @@
     <widget class="QLineEdit" name="aScore15">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -1462,17 +1714,21 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="day0">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>30</y>
        <width>40</width>
        <height>30</height>
@@ -1480,6 +1736,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1490,7 +1747,7 @@
     <widget class="QLabel" name="result0">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>30</y>
        <width>30</width>
        <height>30</height>
@@ -1498,6 +1755,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -1513,7 +1771,7 @@
     <widget class="QLabel" name="result1">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -1521,6 +1779,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -1536,7 +1795,7 @@
     <widget class="QLabel" name="day1">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>70</y>
        <width>40</width>
        <height>30</height>
@@ -1544,6 +1803,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1554,7 +1814,7 @@
     <widget class="QLabel" name="day2">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>110</y>
        <width>40</width>
        <height>30</height>
@@ -1562,6 +1822,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1572,7 +1833,7 @@
     <widget class="QLabel" name="day3">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>150</y>
        <width>40</width>
        <height>30</height>
@@ -1580,6 +1841,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1590,7 +1852,7 @@
     <widget class="QLabel" name="day5">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>230</y>
        <width>40</width>
        <height>30</height>
@@ -1598,6 +1860,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1608,7 +1871,7 @@
     <widget class="QLabel" name="day4">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>190</y>
        <width>40</width>
        <height>30</height>
@@ -1616,6 +1879,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1626,7 +1890,7 @@
     <widget class="QLabel" name="day6">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>270</y>
        <width>40</width>
        <height>30</height>
@@ -1634,6 +1898,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1644,7 +1909,7 @@
     <widget class="QLabel" name="day8">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>350</y>
        <width>40</width>
        <height>30</height>
@@ -1652,6 +1917,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1662,7 +1928,7 @@
     <widget class="QLabel" name="day7">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>310</y>
        <width>40</width>
        <height>30</height>
@@ -1670,6 +1936,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1680,7 +1947,7 @@
     <widget class="QLabel" name="day9">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>390</y>
        <width>40</width>
        <height>30</height>
@@ -1688,6 +1955,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1698,7 +1966,7 @@
     <widget class="QLabel" name="day10">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>430</y>
        <width>40</width>
        <height>30</height>
@@ -1706,6 +1974,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1716,7 +1985,7 @@
     <widget class="QLabel" name="day11">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>470</y>
        <width>40</width>
        <height>30</height>
@@ -1724,6 +1993,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1734,7 +2004,7 @@
     <widget class="QLabel" name="day12">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>510</y>
        <width>40</width>
        <height>30</height>
@@ -1742,6 +2012,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1752,7 +2023,7 @@
     <widget class="QLabel" name="day13">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>550</y>
        <width>40</width>
        <height>30</height>
@@ -1760,6 +2031,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1770,7 +2042,7 @@
     <widget class="QLabel" name="day14">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>590</y>
        <width>40</width>
        <height>30</height>
@@ -1778,6 +2050,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1788,7 +2061,7 @@
     <widget class="QLabel" name="day15">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>630</y>
        <width>40</width>
        <height>30</height>
@@ -1796,6 +2069,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1806,14 +2080,15 @@
     <widget class="QLabel" name="home16">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>670</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1824,7 +2099,7 @@
     <widget class="QLabel" name="ot16">
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>375</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -1832,6 +2107,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1845,7 +2121,7 @@
     <widget class="QLabel" name="day16">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>670</y>
        <width>40</width>
        <height>30</height>
@@ -1853,6 +2129,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1865,12 +2142,13 @@
       <rect>
        <x>110</x>
        <y>670</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1883,12 +2161,13 @@
       <rect>
        <x>110</x>
        <y>710</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1899,7 +2178,7 @@
     <widget class="QLineEdit" name="aScore16">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -1907,24 +2186,29 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="home17">
      <property name="geometry">
       <rect>
-       <x>440</x>
+       <x>450</x>
        <y>710</y>
-       <width>150</width>
+       <width>190</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1935,17 +2219,26 @@
     <widget class="QLineEdit" name="hScore16">
      <property name="geometry">
       <rect>
-       <x>620</x>
+       <x>640</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="day17">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>710</y>
        <width>40</width>
        <height>30</height>
@@ -1953,6 +2246,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Calibri</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1963,17 +2257,7 @@
     <widget class="QLineEdit" name="hScore17">
      <property name="geometry">
       <rect>
-       <x>620</x>
-       <y>710</y>
-       <width>30</width>
-       <height>30</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="ot17">
-     <property name="geometry">
-      <rect>
-       <x>360</x>
+       <x>640</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -1981,6 +2265,26 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot17">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>710</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -1994,7 +2298,7 @@
     <widget class="QLineEdit" name="aScore17">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>300</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -2002,17 +2306,21 @@
      </property>
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
       <string/>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLabel" name="result2">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -2020,6 +2328,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2035,7 +2344,7 @@
     <widget class="QLabel" name="result3">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -2043,6 +2352,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2058,7 +2368,7 @@
     <widget class="QLabel" name="result4">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -2066,6 +2376,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2081,7 +2392,7 @@
     <widget class="QLabel" name="result5">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -2089,6 +2400,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2104,7 +2416,7 @@
     <widget class="QLabel" name="result7">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -2112,6 +2424,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2127,7 +2440,7 @@
     <widget class="QLabel" name="result8">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -2135,6 +2448,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2150,7 +2464,7 @@
     <widget class="QLabel" name="result6">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -2158,6 +2472,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2173,7 +2488,7 @@
     <widget class="QLabel" name="result9">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -2181,6 +2496,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2196,7 +2512,7 @@
     <widget class="QLabel" name="result10">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -2204,6 +2520,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2219,7 +2536,7 @@
     <widget class="QLabel" name="result11">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -2227,6 +2544,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2242,7 +2560,7 @@
     <widget class="QLabel" name="result12">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -2250,6 +2568,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2265,7 +2584,7 @@
     <widget class="QLabel" name="result13">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -2273,6 +2592,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2288,7 +2608,7 @@
     <widget class="QLabel" name="result14">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -2296,6 +2616,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2311,7 +2632,7 @@
     <widget class="QLabel" name="result15">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -2319,6 +2640,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2334,7 +2656,7 @@
     <widget class="QLabel" name="result16">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -2342,6 +2664,7 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
@@ -2357,7 +2680,7 @@
     <widget class="QLabel" name="result17">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>710</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -2365,9 +2688,300 @@
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="away18">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>750</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="home18">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>750</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot18">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>750</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="result18">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>750</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="hScore18">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>750</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day18">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>750</y>
+       <width>40</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="aScore18">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>750</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="away19">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>790</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="home19">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>790</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ot19">
+     <property name="geometry">
+      <rect>
+       <x>375</x>
+       <y>790</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Courier New</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="result19">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>790</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="hScore19">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>790</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day19">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>790</y>
+       <width>40</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="aScore19">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>790</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
       </font>
      </property>
      <property name="text">
@@ -2381,8 +2995,8 @@
    <widget class="QPushButton" name="toggleGroup">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>824</y>
+      <x>840</x>
+      <y>290</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -2391,13 +3005,26 @@
      <string>group box</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="toggleText">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>340</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>toggle</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>850</width>
+     <width>1050</width>
      <height>21</height>
     </rect>
    </property>
