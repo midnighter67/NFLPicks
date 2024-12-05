@@ -8,7 +8,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.ext.automap import automap_base
 import os
 from dotenv import load_dotenv
-from utilities import teams
+from utilities import teams, days
 
 load_dotenv()
 
@@ -45,6 +45,8 @@ class UI(QMainWindow):
         self.toggle = self.findChild(QPushButton, "toggleGroup")
         # HIDE THIS TEST BUTTON
         self.toggleText = self.findChild(QPushButton, "toggleText")
+        self.labelBtn = self.findChild(QPushButton, "labelButton")
+        self.labelBtn.setFlat(True)
         
         # combo boxes
         self.year = self.findChild(QComboBox, "year")
@@ -220,12 +222,20 @@ class UI(QMainWindow):
         self.toggle.clicked.connect(self.changeGroupVisibility)
         self.toggleText.clicked.connect(self.testText)
         self.submit.clicked.connect(self.getSlate)
+        self.labelBtn.clicked.connect(self.buttonTest)
+        # self.home0.clicked.connect(lambda state, obj=self.home0 : self.getName(obj))
         
         
         
         # show the app
         self.show()
         
+    def buttonTest(self):
+        if self.labelBtn.font().bold():
+            getattr(self, "labelBtn").setStyleSheet("font-weight: normal")
+        else:
+            getattr(self, "labelBtn").setStyleSheet("font-weight: bold")
+    
     def changeGroupVisibility(self):
         if self.slate.isVisible():
             # self.setGeometry(50, 50, 850, 500)
@@ -243,6 +253,9 @@ class UI(QMainWindow):
             self.resetSlate()
         else:
             self.showAllText()
+            
+    # def getName(self, obj):
+    #     print(obj.objectName())
         
     def getSlate(self):
         
@@ -253,35 +266,42 @@ class UI(QMainWindow):
         title = f"{year} - week {week}"
         self.slate.setTitle(title)
         
-        row = 0
+        # index = 0
         space = 0
+        previous = ""
         session = Session()
         slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
         
-        for game in slate:
+        # getattr(self, "day" + row).setText('some text')
+        
+        for index, game in enumerate(slate):
+            # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
             day = game[6]
-            if row == 0:
-                self.day0.setText(game[6][:3])
-                self.away0.setText(teams[game[8]])
-                self.aScore0.setVisible(True)
-                self.aScore0.setText(str(game[9]))
-                self.home0.setText(teams[game[10]])
-                self.hScore0.setVisible(True)
-                self.hScore0.setText(str(game[11]))
-                if game[13] == 1:
-                    self.ot0.setText("OT")
-                if game[17] == 'h':
-                    self.home0.setStyleSheet("font-weight: bold")
-                    self.result0.setText("C" if game[11] > game[9] else "X")
-                elif game[17] == 'a':
-                    self.away0.setStyleSheet("font-weight: bold")
-                    self.result0.setText("C" if game[9] > game[11] else "X")
+            if day != previous:
+                if index !=0:
+                    space += 1
+                getattr(self, "day" + str(index + space)).setText(game[6][:3])
             else:
-                pass
-        
-        
-        
-        
+                if day == "Sunday" and int(game[7][:2]) >= 18:
+                    getattr(self, "day" + str(index + space)).setText("Night")
+                
+            getattr(self, "away" + str(index + space)).setText(teams[game[8]])
+            getattr(self, "aScore" + str(index + space)).setVisible(True)
+            if game[9]:
+                getattr(self, "aScore" + str(index + space)).setText(str(game[9]))
+            getattr(self, "home" + str(index + space)).setText(teams[game[10]])
+            getattr(self, "hScore" + str(index + space)).setVisible(True)
+            if game[11]:
+                getattr(self, "hScore" + str(index + space)).setText(str(game[11]))
+            if game[13] == 1:
+                getattr(self, "ot" + str(index + space)).setText("OT")
+            if game[17] == 'h':
+                getattr(self, "home" + str(index + space)).setStyleSheet("font-weight: bold")
+                getattr(self, "result" + str(index + space)).setText("C" if game[11] > game[9] else "X")
+            elif game[17] == 'a':
+                getattr(self, "away" + str(index + space)).setStyleSheet("font-weight: bold")
+                getattr(self, "result" + str(index + space)).setText("C" if game[9] > game[11] else "X")
+            previous = day
         
         
     def setPosition(self, size):
