@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>NFL Picks</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="submitButton">
     <property name="geometry">
@@ -93,25 +96,6 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-    <widget class="QLabel" name="away0">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>30</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="ot0">
      <property name="geometry">
       <rect>
@@ -132,27 +116,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home0">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>30</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="aScore0">
@@ -197,44 +160,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away1">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>70</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home1">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>70</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore1">
@@ -303,44 +228,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away2">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>110</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home2">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>110</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore2">
      <property name="geometry">
       <rect>
@@ -402,44 +289,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away3">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>150</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home3">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>150</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore3">
@@ -505,44 +354,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away4">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>190</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home4">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>190</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore4">
      <property name="geometry">
       <rect>
@@ -604,44 +415,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away5">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>230</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home5">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>230</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore5">
@@ -707,44 +480,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away6">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>270</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home6">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>270</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore6">
      <property name="geometry">
       <rect>
@@ -806,46 +541,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away7">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>310</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home7">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>310</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore7">
@@ -911,44 +606,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away8">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>350</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home8">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>350</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore8">
      <property name="geometry">
       <rect>
@@ -1010,46 +667,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away9">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>390</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home9">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>390</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore9">
@@ -1115,44 +732,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away10">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>430</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home10">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>430</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore10">
      <property name="geometry">
       <rect>
@@ -1214,44 +793,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away11">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>470</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home11">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>470</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore11">
@@ -1317,44 +858,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away12">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>510</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home12">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>510</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore12">
      <property name="geometry">
       <rect>
@@ -1416,44 +919,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away13">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>550</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home13">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>550</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore13">
@@ -1519,44 +984,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away14">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>590</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home14">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>590</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="hScore14">
      <property name="geometry">
       <rect>
@@ -1618,46 +1045,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away15">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>630</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home15">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>630</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore15">
@@ -2077,25 +1464,6 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="home16">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>670</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="ot16">
      <property name="geometry">
       <rect>
@@ -2137,44 +1505,6 @@
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="away16">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>670</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="away17">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>710</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="aScore16">
      <property name="geometry">
       <rect>
@@ -2195,25 +1525,6 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home17">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>710</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore16">
@@ -2701,44 +2012,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away18">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>750</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home18">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>750</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="ot18">
      <property name="geometry">
       <rect>
@@ -2845,46 +2118,6 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="away19">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>790</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="home19">
-     <property name="geometry">
-      <rect>
-       <x>450</x>
-       <y>790</y>
-       <width>190</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="ot19">
      <property name="geometry">
       <rect>
@@ -2989,6 +2222,888 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home0">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>30</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home1">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>70</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home2">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>110</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home3">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>150</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home4">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>190</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home5">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>230</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home6">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>270</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home7">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>310</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home8">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>350</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home9">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>390</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home10">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>430</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home11">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>470</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home12">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>510</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home13">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>550</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home14">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>590</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home15">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>630</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home16">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>670</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home17">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>710</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home18">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>750</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="home19">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>790</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away0">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away1">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>70</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>110</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>150</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away4">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>190</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away5">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>230</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away6">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>270</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away7">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>310</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away8">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>350</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away9">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>390</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away10">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>430</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away11">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>470</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away12">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>510</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away13">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>550</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away14">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>590</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away15">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>630</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away16">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>670</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away17">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>710</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away18">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>750</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="away19">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>790</y>
+       <width>190</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>

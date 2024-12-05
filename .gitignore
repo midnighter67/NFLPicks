@@ -4,3 +4,4 @@ venv/
 *.docx
 *.txt
 test.py
+*.pyc

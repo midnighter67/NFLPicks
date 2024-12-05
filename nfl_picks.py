@@ -123,48 +123,48 @@ class UI(QMainWindow):
         self.result19 = self.findChild(QLabel, "result19")
         
         # away team labels
-        self.away0 = self.findChild(QLabel, "away0")
-        self.away1 = self.findChild(QLabel, "away1")
-        self.away2 = self.findChild(QLabel, "away2")
-        self.away3 = self.findChild(QLabel, "away3")
-        self.away4 = self.findChild(QLabel, "away4")
-        self.away5 = self.findChild(QLabel, "away5")
-        self.away6 = self.findChild(QLabel, "away6")
-        self.away7 = self.findChild(QLabel, "away7")
-        self.away8 = self.findChild(QLabel, "away8")
-        self.away9 = self.findChild(QLabel, "away9")
-        self.away10 = self.findChild(QLabel, "away10")
-        self.away11 = self.findChild(QLabel, "away11")
-        self.away12 = self.findChild(QLabel, "away12")
-        self.away13 = self.findChild(QLabel, "away13")
-        self.away14 = self.findChild(QLabel, "away14")
-        self.away15 = self.findChild(QLabel, "away15")
-        self.away16 = self.findChild(QLabel, "away16")
-        self.away17 = self.findChild(QLabel, "away17")
-        self.away18 = self.findChild(QLabel, "away18")
-        self.away19 = self.findChild(QLabel, "away19")
+        self.away0 = self.findChild(QPushButton, "away0")
+        self.away1 = self.findChild(QPushButton, "away1")
+        self.away2 = self.findChild(QPushButton, "away2")
+        self.away3 = self.findChild(QPushButton, "away3")
+        self.away4 = self.findChild(QPushButton, "away4")
+        self.away5 = self.findChild(QPushButton, "away5")
+        self.away6 = self.findChild(QPushButton, "away6")
+        self.away7 = self.findChild(QPushButton, "away7")
+        self.away8 = self.findChild(QPushButton, "away8")
+        self.away9 = self.findChild(QPushButton, "away9")
+        self.away10 = self.findChild(QPushButton, "away10")
+        self.away11 = self.findChild(QPushButton, "away11")
+        self.away12 = self.findChild(QPushButton, "away12")
+        self.away13 = self.findChild(QPushButton, "away13")
+        self.away14 = self.findChild(QPushButton, "away14")
+        self.away15 = self.findChild(QPushButton, "away15")
+        self.away16 = self.findChild(QPushButton, "away16")
+        self.away17 = self.findChild(QPushButton, "away17")
+        self.away18 = self.findChild(QPushButton, "away18")
+        self.away19 = self.findChild(QPushButton, "away19")
         
         # home team labels
-        self.home0 = self.findChild(QLabel, "home0")
-        self.home1 = self.findChild(QLabel, "home1")
-        self.home2 = self.findChild(QLabel, "home2")
-        self.home3 = self.findChild(QLabel, "home3")
-        self.home4 = self.findChild(QLabel, "home4")
-        self.home5 = self.findChild(QLabel, "home5")
-        self.home6 = self.findChild(QLabel, "home6")
-        self.home7 = self.findChild(QLabel, "home7")
-        self.home8 = self.findChild(QLabel, "home8")
-        self.home9 = self.findChild(QLabel, "home9")
-        self.home10 = self.findChild(QLabel, "home10")
-        self.home11 = self.findChild(QLabel, "home11")
-        self.home12 = self.findChild(QLabel, "home12")
-        self.home13 = self.findChild(QLabel, "home13")
-        self.home14 = self.findChild(QLabel, "home14")
-        self.home15 = self.findChild(QLabel, "home15")
-        self.home16 = self.findChild(QLabel, "home16")
-        self.home17 = self.findChild(QLabel, "home17")
-        self.home18 = self.findChild(QLabel, "home18")
-        self.home19 = self.findChild(QLabel, "home19")
+        self.home0 = self.findChild(QPushButton, "home0")
+        self.home1 = self.findChild(QPushButton, "home1")
+        self.home2 = self.findChild(QPushButton, "home2")
+        self.home3 = self.findChild(QPushButton, "home3")
+        self.home4 = self.findChild(QPushButton, "home4")
+        self.home5 = self.findChild(QPushButton, "home5")
+        self.home6 = self.findChild(QPushButton, "home6")
+        self.home7 = self.findChild(QPushButton, "home7")
+        self.home8 = self.findChild(QPushButton, "home8")
+        self.home9 = self.findChild(QPushButton, "home9")
+        self.home10 = self.findChild(QPushButton, "home10")
+        self.home11 = self.findChild(QPushButton, "home11")
+        self.home12 = self.findChild(QPushButton, "home12")
+        self.home13 = self.findChild(QPushButton, "home13")
+        self.home14 = self.findChild(QPushButton, "home14")
+        self.home15 = self.findChild(QPushButton, "home15")
+        self.home16 = self.findChild(QPushButton, "home16")
+        self.home17 = self.findChild(QPushButton, "home17")
+        self.home18 = self.findChild(QPushButton, "home18")
+        self.home19 = self.findChild(QPushButton, "home19")
         
         # away score line edit boxes
         self.aScore0 = self.findChild(QLineEdit, "aScore0")
@@ -494,26 +494,127 @@ class UI(QMainWindow):
         self.away18.setText('')
         self.away19.setText('')
         
-        self.away0.setStyleSheet("font-weight: normal")
-        self.away1.setStyleSheet("font-weight: normal")
-        self.away2.setStyleSheet("font-weight: normal")
-        self.away3.setStyleSheet("font-weight: normal")
-        self.away4.setStyleSheet("font-weight: normal")
-        self.away5.setStyleSheet("font-weight: normal")
-        self.away6.setStyleSheet("font-weight: normal")
-        self.away7.setStyleSheet("font-weight: normal")
-        self.away8.setStyleSheet("font-weight: normal")
-        self.away9.setStyleSheet("font-weight: normal")
-        self.away10.setStyleSheet("font-weight: normal")
-        self.away11.setStyleSheet("font-weight: normal")
-        self.away12.setStyleSheet("font-weight: normal")
-        self.away13.setStyleSheet("font-weight: normal")
-        self.away14.setStyleSheet("font-weight: normal")
-        self.away15.setStyleSheet("font-weight: normal")
-        self.away16.setStyleSheet("font-weight: normal")
-        self.away17.setStyleSheet("font-weight: normal")
-        self.away18.setStyleSheet("font-weight: normal")
-        self.away19.setStyleSheet("font-weight: normal")
+        self.away0.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away1.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away2.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away3.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away4.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away5.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away6.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away7.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away8.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away9.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away10.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away11.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away12.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away13.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away14.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away15.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away16.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away17.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away18.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.away19.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        
         
         self.home0.setText('')
         self.home1.setText('')
@@ -536,26 +637,127 @@ class UI(QMainWindow):
         self.home18.setText('')
         self.home19.setText('')
         
-        self.home0.setStyleSheet("font-weight: normal")
-        self.home1.setStyleSheet("font-weight: normal")
-        self.home2.setStyleSheet("font-weight: normal")
-        self.home3.setStyleSheet("font-weight: normal")
-        self.home4.setStyleSheet("font-weight: normal")
-        self.home5.setStyleSheet("font-weight: normal")
-        self.home6.setStyleSheet("font-weight: normal")
-        self.home7.setStyleSheet("font-weight: normal")
-        self.home8.setStyleSheet("font-weight: normal")
-        self.home9.setStyleSheet("font-weight: normal")
-        self.home10.setStyleSheet("font-weight: normal")
-        self.home11.setStyleSheet("font-weight: normal")
-        self.home12.setStyleSheet("font-weight: normal")
-        self.home13.setStyleSheet("font-weight: normal")
-        self.home14.setStyleSheet("font-weight: normal")
-        self.home15.setStyleSheet("font-weight: normal")
-        self.home16.setStyleSheet("font-weight: normal")
-        self.home17.setStyleSheet("font-weight: normal")
-        self.home18.setStyleSheet("font-weight: normal")
-        self.home19.setStyleSheet("font-weight: normal")
+        self.home0.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home1.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home2.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home3.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home4.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home5.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home6.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home7.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home8.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home9.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home10.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home11.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home12.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home13.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home14.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home15.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home16.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home17.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home18.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        self.home19.setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+        """)
+        
     
     # for testing
     def showAllText(self):
