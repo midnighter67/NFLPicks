@@ -9,6 +9,7 @@ from sqlalchemy.ext.automap import automap_base
 import os
 from dotenv import load_dotenv
 from utilities import teams, days
+import re
 
 load_dotenv()
 
@@ -223,6 +224,49 @@ class UI(QMainWindow):
         self.toggleText.clicked.connect(self.testText)
         self.submit.clicked.connect(self.getSlate)
         self.labelBtn.clicked.connect(self.buttonTest)
+        # home team button clicks
+        self.home0.clicked.connect(self.select)
+        self.home1.clicked.connect(self.select)
+        self.home2.clicked.connect(self.select)
+        self.home3.clicked.connect(self.select)
+        self.home4.clicked.connect(self.select)
+        self.home5.clicked.connect(self.select)
+        self.home6.clicked.connect(self.select)
+        self.home7.clicked.connect(self.select)
+        self.home8.clicked.connect(self.select)
+        self.home9.clicked.connect(self.select)
+        self.home10.clicked.connect(self.select)
+        self.home11.clicked.connect(self.select)
+        self.home12.clicked.connect(self.select)
+        self.home13.clicked.connect(self.select)
+        self.home14.clicked.connect(self.select)
+        self.home15.clicked.connect(self.select)
+        self.home16.clicked.connect(self.select)
+        self.home17.clicked.connect(self.select)
+        self.home18.clicked.connect(self.select)
+        self.home19.clicked.connect(self.select)
+        # away team button clicks
+        self.away0.clicked.connect(self.select)
+        self.away1.clicked.connect(self.select)
+        self.away2.clicked.connect(self.select)
+        self.away3.clicked.connect(self.select)
+        self.away4.clicked.connect(self.select)
+        self.away5.clicked.connect(self.select)
+        self.away6.clicked.connect(self.select)
+        self.away7.clicked.connect(self.select)
+        self.away8.clicked.connect(self.select)
+        self.away9.clicked.connect(self.select)
+        self.away10.clicked.connect(self.select)
+        self.away11.clicked.connect(self.select)
+        self.away12.clicked.connect(self.select)
+        self.away13.clicked.connect(self.select)
+        self.away14.clicked.connect(self.select)
+        self.away15.clicked.connect(self.select)
+        self.away16.clicked.connect(self.select)
+        self.away17.clicked.connect(self.select)
+        self.away18.clicked.connect(self.select)
+        self.away19.clicked.connect(self.select)
+       
         # self.home0.clicked.connect(lambda state, obj=self.home0 : self.getName(obj))
         
         
@@ -287,11 +331,11 @@ class UI(QMainWindow):
                 
             getattr(self, "away" + str(index + space)).setText(teams[game[8]])
             getattr(self, "aScore" + str(index + space)).setVisible(True)
-            if game[9]:
+            if game[9] != None:
                 getattr(self, "aScore" + str(index + space)).setText(str(game[9]))
             getattr(self, "home" + str(index + space)).setText(teams[game[10]])
             getattr(self, "hScore" + str(index + space)).setVisible(True)
-            if game[11]:
+            if game[11] != None:
                 getattr(self, "hScore" + str(index + space)).setText(str(game[11]))
             if game[13] == 1:
                 getattr(self, "ot" + str(index + space)).setText("OT")
@@ -302,6 +346,42 @@ class UI(QMainWindow):
                 getattr(self, "away" + str(index + space)).setStyleSheet("font-weight: bold")
                 getattr(self, "result" + str(index + space)).setText("C" if game[9] > game[11] else "X")
             previous = day
+    
+    def select(self):
+        ref = self.sender()
+        btn = ref.objectName()
+        # team = ref.text()
+        location = btn[0:4]
+        position = btn[4:]
+        oppBtn = ("away" + position) if location == "home" else ("home" + position)
+        if getattr(self, btn).font().bold():
+            getattr(self, btn).setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+            """)
+            # getattr(self, btn).setStyleSheet("font-weight: normal")
+            # getattr(self, btn).setStyleSheet("text-align: left")
+            
+        else:
+            getattr(self, btn).setStyleSheet("""
+                        QPushButton {
+                            font-weight: bold;
+                            text-align: left;
+                        }
+            """)
+            # getattr(self, btn).setStyleSheet("font-weight: bold")
+            # getattr(self, btn).setStyleSheet("text-align: left")
+            getattr(self, oppBtn).setStyleSheet("""
+                        QPushButton {
+                            font-weight: normal;
+                            text-align: left;
+                        }
+            """)
+            # getattr(self, oppBtn).setStyleSheet("font-weight: normal")
+            # getattr(self, oppBtn).setStyleSheet("text-align: left")
+       
         
         
     def setPosition(self, size):
