@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1050</width>
+    <width>955</width>
     <height>900</height>
    </rect>
   </property>
@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>submit</string>
+     <string>get slate</string>
     </property>
    </widget>
    <widget class="QComboBox" name="year">
@@ -38,6 +38,9 @@
       <width>70</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="currentText">
+     <string/>
     </property>
    </widget>
    <widget class="QComboBox" name="week">
@@ -160,6 +163,9 @@
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>false</bool>
      </property>
     </widget>
     <widget class="QLineEdit" name="hScore1">
@@ -3111,39 +3117,65 @@
     <property name="geometry">
      <rect>
       <x>840</x>
-      <y>290</y>
+      <y>410</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>group box</string>
+     <string>toggle size</string>
     </property>
    </widget>
    <widget class="QPushButton" name="toggleText">
     <property name="geometry">
      <rect>
       <x>840</x>
-      <y>340</y>
+      <y>440</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>toggle</string>
+     <string>toggle display</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="labelButton">
+   <widget class="QPushButton" name="editButton">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>380</y>
-      <width>75</width>
-      <height>23</height>
+      <x>830</x>
+      <y>510</y>
+      <width>100</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
-     <string>label</string>
+     <string>view/edit picks</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="statsButton">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>550</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>statistics</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="homeButton">
+    <property name="geometry">
+     <rect>
+      <x>825</x>
+      <y>310</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>home</string>
     </property>
    </widget>
   </widget>
@@ -3152,7 +3184,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1050</width>
+     <width>955</width>
      <height>21</height>
     </rect>
    </property>

@@ -1,3 +1,6 @@
+import datetime as d
+
+
 teams = {
     "ARI": "Arizona",
     "ATL": "Atlanta",
@@ -33,4 +36,8 @@ teams = {
     "WAS": "Washington"
 }
 
-days = ["day0", "day1", "day2", "day3", "day4", "day5", "day6", "day7", "day8", "day9", "day10", "day11", "day12", "day13", "day14", "day15", "day16", "day17", "day18", "day19"]
+
+# today = d.datetime.today()
+
+# Create a specific datetime object
+# d.datetime(2023, 12, 25, 12, 30)

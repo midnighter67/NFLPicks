@@ -8,7 +8,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.ext.automap import automap_base
 import os
 from dotenv import load_dotenv
-from utilities import teams, days
+from utilities import teams
 import re
 
 load_dotenv()
@@ -28,7 +28,7 @@ class UI(QMainWindow):
         # load the ui file
         uic.loadUi("nfl_picks.ui", self)
         self.setWindowTitle("NFL Picks")
-        self.setFixedWidth(950)
+        # self.setFixedWidth(950)
         
         
         # Geometry
@@ -42,16 +42,21 @@ class UI(QMainWindow):
         # *********************************** WIDGETS *************************************
         # buttons
         self.submit = self.findChild(QPushButton, "submitButton")
+        self.edit = self.findChild(QPushButton, "editButton")
+        self.stats = self.findChild(QPushButton, "statsButton")
+        self.home = self.findChild(QPushButton, "homeButton")
         # HIDE THIS TEST BUTTON
         self.toggle = self.findChild(QPushButton, "toggleGroup")
         # HIDE THIS TEST BUTTON
         self.toggleText = self.findChild(QPushButton, "toggleText")
-        self.labelBtn = self.findChild(QPushButton, "labelButton")
-        self.labelBtn.setFlat(True)
         
         # combo boxes
         self.year = self.findChild(QComboBox, "year")
         self.week = self.findChild(QComboBox, "week")
+        
+        # combo box labels
+        self.yearLabel = self.findChild(QLabel, "yearLabel")
+        self.weekLabel = self.findChild(QLabel, "weekLabel")
         
         # group box
         self.slate = self.findChild(QGroupBox, "slate")
@@ -216,14 +221,20 @@ class UI(QMainWindow):
         # populate dropdowns
         self.year.addItems([str(year) for year in range(2021, 2025)])
         self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
-        # hide weekly schedule
-        self.slate.setVisible(False)
-        self.setPosition(0)
+        
+        # set startup to small window with edit and stats buttons
+        self.showHome()
+        # self.slate.setVisible(False)
+        # self.setPosition(0)
+        
         # attach click functions
         self.toggle.clicked.connect(self.changeGroupVisibility)
         self.toggleText.clicked.connect(self.testText)
         self.submit.clicked.connect(self.getSlate)
-        self.labelBtn.clicked.connect(self.buttonTest)
+        self.edit.clicked.connect(self.viewSlate)
+        self.stats.clicked.connect(self.showStats)
+        self.home.clicked.connect(self.showHome)
+        
         # home team button clicks
         self.home0.clicked.connect(self.select)
         self.home1.clicked.connect(self.select)
@@ -245,6 +256,7 @@ class UI(QMainWindow):
         self.home17.clicked.connect(self.select)
         self.home18.clicked.connect(self.select)
         self.home19.clicked.connect(self.select)
+        
         # away team button clicks
         self.away0.clicked.connect(self.select)
         self.away1.clicked.connect(self.select)
@@ -269,16 +281,9 @@ class UI(QMainWindow):
        
         # self.home0.clicked.connect(lambda state, obj=self.home0 : self.getName(obj))
         
-        
-        
         # show the app
         self.show()
         
-    def buttonTest(self):
-        if self.labelBtn.font().bold():
-            getattr(self, "labelBtn").setStyleSheet("font-weight: normal")
-        else:
-            getattr(self, "labelBtn").setStyleSheet("font-weight: bold")
     
     def changeGroupVisibility(self):
         if self.slate.isVisible():
@@ -300,6 +305,25 @@ class UI(QMainWindow):
             
     # def getName(self, obj):
     #     print(obj.objectName())
+    
+    def viewSlate(self):
+        self.setGeometry(self.x()+1, 50, 950, 900)
+        self.setFixedWidth(950)
+        # hide home buttons
+        self.edit.setVisible(False)
+        self.stats.setVisible(False)
+        # show edit buttons
+        self.submit.setVisible(True)
+        self.yearLabel.setVisible(True)
+        self.year.setVisible(True)
+        self.weekLabel.setVisible(True)
+        self.week.setVisible(True)
+        self.home.setVisible(True)
+        self.slate.setVisible(True)
+        self.resetSlate()
+    
+    def showStats(self):
+        pass
         
     def getSlate(self):
         
@@ -310,13 +334,10 @@ class UI(QMainWindow):
         title = f"{year} - week {week}"
         self.slate.setTitle(title)
         
-        # index = 0
         space = 0
         previous = ""
         session = Session()
         slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
-        
-        # getattr(self, "day" + row).setText('some text')
         
         for index, game in enumerate(slate):
             # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
@@ -403,6 +424,35 @@ class UI(QMainWindow):
             # self.submit.setGeometry(480, 824, 70, 25)
             # self.year.setGeometry(300, 824, 70, 25)
             # self.week.setGeometry(390, 824, 70, 25)
+            
+    def showHome(self):
+        # set main window size
+        if self.slate.isVisible():
+            x = self.x()+1
+            y = self.y()+31
+        else: 
+            x, y = 50, 50
+        self.setGeometry(x, y, 500, 300)
+        
+        # hide buttons
+        self.setFixedWidth(500)
+        self.submit.setVisible(False)
+        self.yearLabel.setVisible(False)
+        self.year.setVisible(False)
+        self.weekLabel.setVisible(False)
+        self.week.setVisible(False)
+        self.home.setVisible(False)
+        self.slate.setVisible(False)
+        # test buttons
+        self.toggle.setVisible(False)
+        self.toggleText.setVisible(False)
+        
+        # place buttons on main window
+        self.edit.setGeometry(125, 170, 100, 30)
+        self.edit.setVisible(True)
+        self.stats.setGeometry(275, 170, 100, 30)
+        self.stats.setVisible(True)   
+        
         
     # clear the form
     def resetSlate(self):
