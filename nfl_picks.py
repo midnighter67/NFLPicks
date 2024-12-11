@@ -217,7 +217,7 @@ class UI(QMainWindow):
         self.hScore19 = self.findChild(QLineEdit, "hScore19")
         # *********************************** END WIDGETS *************************************
         
-        # ACTIONS
+        ####################### ACTIONS #############################
         # populate dropdowns
         self.year.addItems([str(year) for year in range(2021, 2025)])
         self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
@@ -281,32 +281,17 @@ class UI(QMainWindow):
        
         # self.home0.clicked.connect(lambda state, obj=self.home0 : self.getName(obj))
         
+        
         # show the app
         self.show()
         
     
-    def changeGroupVisibility(self):
-        if self.slate.isVisible():
-            # self.setGeometry(50, 50, 850, 500)
-            # self.toggle.setGeometry(580, 450, 75, 23)
-            self.setPosition(0)
-            self.slate.setVisible(False)
-        else:
-            # self.setGeometry(50, 50, 850, 910)
-            # self.toggle.setGeometry(580, 824, 75, 23)
-            self.setPosition(1)
-            self.slate.setVisible(True)
-            
-    def testText(self):
-        if self.aScore0.isVisible():
-            self.resetSlate()
-        else:
-            self.showAllText()
-            
-    # def getName(self, obj):
-    #     print(obj.objectName())
     
+            
     def viewSlate(self):
+        # Updates the window geometry, hides view/edit and stats buttons, shows the combo boxes and home button,
+        #   and displays an empty slate
+        
         self.setGeometry(self.x()+1, 50, 950, 900)
         self.setFixedWidth(950)
         # hide home buttons
@@ -326,9 +311,10 @@ class UI(QMainWindow):
         pass
         
     def getSlate(self):
+        # Gets/displays the matchups/scores/picks/results for the season and week selectes with the year and week combo boxes
         
         self.resetSlate()
-        
+        # set title
         week = self.week.currentText()
         year = self.year.currentText()
         title = f"{year} - week {week}"
@@ -369,6 +355,9 @@ class UI(QMainWindow):
             previous = day
     
     def select(self):
+        # Toggles the boldness of the selected button text and unbolds the button text of the opponent button if
+        #   the selected button is changed to bold
+        
         ref = self.sender()
         btn = ref.objectName()
         # team = ref.text()
@@ -404,28 +393,10 @@ class UI(QMainWindow):
             # getattr(self, oppBtn).setStyleSheet("text-align: left")
        
         
-        
-    def setPosition(self, size):
-        if size == 0:
-            # small window
-            self.setGeometry(self.x()+1, self.y()+31, 950, 500)   # self.setGeometry(self.x(), self.y(), 850, 500)
-            #print('x = ', self.x())
-            #print ('y = ',self.y())
-            # self.toggle.setGeometry(580, 450, 75, 23)
-            # self.submit.setGeometry(480, 450, 70, 25)
-            # self.year.setGeometry(300, 450, 70, 25)
-            # self.week.setGeometry(390, 450, 70, 25)
-        else:
-            # large window
-            self.setGeometry(self.x()+1, self.y()+31, 950, 900)   # self.setGeometry(self.x(), self.y(), 850, 910)
-            #print('x = ', self.x())
-            #print ('y = ',self.y())
-            # self.toggle.setGeometry(580, 824, 75, 23)
-            # self.submit.setGeometry(480, 824, 70, 25)
-            # self.year.setGeometry(300, 824, 70, 25)
-            # self.week.setGeometry(390, 824, 70, 25)
             
     def showHome(self):
+        # Shows the home UI with view/edit and stats buttons.  Clears the slate. 
+        
         # set main window size
         if self.slate.isVisible():
             x = self.x()+1
@@ -889,7 +860,9 @@ class UI(QMainWindow):
         """)
         
     
-    # for testing
+    ########################################################################################################
+    #################################### FOR TESTING #######################################################
+    
     def showAllText(self):
         self.aScore0.setText('0')
         self.aScore1.setText('1')
@@ -1079,6 +1052,47 @@ class UI(QMainWindow):
         self.home17.setText('Los Angeles Rams')
         self.home18.setText('Los Angeles Rams')
         self.home19.setText('Los Angeles Chargers')
+        
+    def changeGroupVisibility(self):
+        if self.slate.isVisible():
+            # self.setGeometry(50, 50, 850, 500)
+            # self.toggle.setGeometry(580, 450, 75, 23)
+            self.setPosition(0)
+            self.slate.setVisible(False)
+        else:
+            # self.setGeometry(50, 50, 850, 910)
+            # self.toggle.setGeometry(580, 824, 75, 23)
+            self.setPosition(1)
+            self.slate.setVisible(True)
+            
+    def testText(self):
+        if self.aScore0.isVisible():
+            self.resetSlate()
+        else:
+            self.showAllText()
+            
+    def setPosition(self, size):
+        if size == 0:
+            # small window
+            self.setGeometry(self.x()+1, self.y()+31, 950, 500)   # self.setGeometry(self.x(), self.y(), 850, 500)
+            #print('x = ', self.x())
+            #print ('y = ',self.y())
+            # self.toggle.setGeometry(580, 450, 75, 23)
+            # self.submit.setGeometry(480, 450, 70, 25)
+            # self.year.setGeometry(300, 450, 70, 25)
+            # self.week.setGeometry(390, 450, 70, 25)
+        else:
+            # large window
+            self.setGeometry(self.x()+1, self.y()+31, 950, 900)   # self.setGeometry(self.x(), self.y(), 850, 910)
+            #print('x = ', self.x())
+            #print ('y = ',self.y())
+            # self.toggle.setGeometry(580, 824, 75, 23)
+            # self.submit.setGeometry(480, 824, 70, 25)
+            # self.year.setGeometry(300, 824, 70, 25)
+            # self.week.setGeometry(390, 824, 70, 25)
+
+#################################### END TESTING CODE ####################################################
+##########################################################################################################
         
         
 app = QApplication(sys.argv)
