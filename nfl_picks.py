@@ -1,6 +1,9 @@
 
 from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QGroupBox, QComboBox, QLineEdit, QScrollBar
 from PyQt5 import uic
+from PyQt5 import QtCore, QtGui
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
 import sys
 import psycopg2
 from sqlalchemy import create_engine, MetaData, Table, insert
@@ -221,6 +224,23 @@ class UI(QMainWindow):
         # populate dropdowns
         self.year.addItems([str(year) for year in range(2021, 2025)])
         self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
+        
+        # set combo boxes to editable to set alignment
+        self.year.setEditable(True)
+        self.week.setEditable(True)
+ 
+        # getting the line edit of combo boxes
+        year_line_edit = self.year.lineEdit()
+        week_line_edit = self.week.lineEdit()
+ 
+        # setting line edit alignment to the center
+        year_line_edit.setAlignment(Qt.AlignCenter)
+        week_line_edit.setAlignment(Qt.AlignCenter)
+ 
+ 
+        # setting line edit to read only
+        year_line_edit.setReadOnly(True)
+        week_line_edit.setReadOnly(True)
         
         # set startup to small window with edit and stats buttons
         self.showHome()
