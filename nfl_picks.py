@@ -6,12 +6,12 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import psycopg2
-from sqlalchemy import create_engine, MetaData, Table, insert
+from sqlalchemy import create_engine, MetaData, Table, insert, update
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.ext.automap import automap_base
 import os
 from dotenv import load_dotenv
-from utilities import teams
+from utilities import teams, styles
 import re
 
 load_dotenv()
@@ -22,6 +22,7 @@ metadata = MetaData()
 metadata.reflect(bind=engine)
 games = Table('picks', metadata, autoload_with=engine)
 Session = sessionmaker(bind=engine)
+session = Session()
 
 class UI(QMainWindow):
     def __init__(self):
@@ -48,6 +49,7 @@ class UI(QMainWindow):
         self.edit = self.findChild(QPushButton, "editButton")
         self.stats = self.findChild(QPushButton, "statsButton")
         self.home = self.findChild(QPushButton, "homeButton")
+        self.save = self.findChild(QPushButton, "saveButton")
         # HIDE THIS TEST BUTTON
         self.toggle = self.findChild(QPushButton, "toggleGroup")
         # HIDE THIS TEST BUTTON
@@ -237,8 +239,7 @@ class UI(QMainWindow):
         year_line_edit.setAlignment(Qt.AlignCenter)
         week_line_edit.setAlignment(Qt.AlignCenter)
  
- 
-        # setting line edit to read only
+        # setting combo box line edit to read only
         year_line_edit.setReadOnly(True)
         week_line_edit.setReadOnly(True)
         
@@ -254,6 +255,7 @@ class UI(QMainWindow):
         self.edit.clicked.connect(self.viewSlate)
         self.stats.clicked.connect(self.showStats)
         self.home.clicked.connect(self.showHome)
+        self.save.clicked.connect(self.saveChanges)
         
         # home team button clicks
         self.home0.clicked.connect(self.select)
@@ -342,11 +344,11 @@ class UI(QMainWindow):
         
         space = 0
         previous = ""
-        session = Session()
         slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
         
         for index, game in enumerate(slate):
             # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
+            print("gameid = ", game[1])
             day = game[6]
             if day != previous:
                 if index !=0:
@@ -367,12 +369,50 @@ class UI(QMainWindow):
             if game[13] == 1:
                 getattr(self, "ot" + str(index + space)).setText("OT")
             if game[17] == 'h':
-                getattr(self, "home" + str(index + space)).setStyleSheet("font-weight: bold")
+                getattr(self, "home" + str(index + space)).setStyleSheet("""
+                        QPushButton {
+                            font-weight: bold;
+                            text-align: left;
+                        }
+                """)
                 getattr(self, "result" + str(index + space)).setText("C" if game[11] > game[9] else "X")
+                print("picked home")
             elif game[17] == 'a':
-                getattr(self, "away" + str(index + space)).setStyleSheet("font-weight: bold")
+                getattr(self, "away" + str(index + space)).setStyleSheet("""
+                        QPushButton {
+                            font-weight: bold;
+                            text-align: left;
+                        }
+                """)
                 getattr(self, "result" + str(index + space)).setText("C" if game[9] > game[11] else "X")
+                print("picked away")
             previous = day
+    
+    def saveChanges(self):
+        # statement = update(table).values(columnNameA=63).where(table.columns.columnNameB=='Snoopy')
+        # session.execute(statement)
+        # session.commit()
+        if self.slate.isVisible():
+            for row in range(0,20):
+                gPick = ''
+                if getattr(self, "away" + str(row)).text() != '' and getattr(self, "home" + str(row)).text() != '':
+                    a = [key for key, value in teams.items() if value == getattr(self, "away" + str(row)).text()]
+                    h = [key for key, value in teams.items() if value == getattr(self, "home" + str(row)).text()]
+                    id = self.year.currentText() + "_" + self.week.currentText().rjust(2,'0') + "_" + a[0] + "_" + h[0]
+                    if getattr(self, "away" + str(row)).font().bold():
+                        gPick = "a"
+                    elif getattr(self, "home" + str(row)).font().bold():
+                        gPick = "h"
+                    overtime = 1 if getattr(self, "ot" + str(row)).text() == "OT" else 0
+                    aScore = int(getattr(self, "aScore" + str(row)).text())
+                    hScore = int(getattr(self, "hScore" + str(row)).text())
+                    print("id=", id, ", aScore=", aScore, ", hscore=", hScore, ", ot=", overtime, ", pick=", gPick)
+                    # write: aScore, hScore, ot, pick
+                    statement = update(games).values(ascore=aScore, hscore=hScore, ot=overtime, pick=gPick).where(games.columns.gameid==id)
+                    session.execute(statement)
+            session.commit()
+                    
+                
     
     def select(self):
         # Toggles the boldness of the selected button text and unbolds the button text of the opponent button if
@@ -1116,6 +1156,7 @@ class UI(QMainWindow):
         
         
 app = QApplication(sys.argv)
+app.setStyle(styles[1])
 UIWindow = UI()
 app.exec_()
 

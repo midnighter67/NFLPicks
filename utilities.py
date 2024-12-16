@@ -36,6 +36,15 @@ teams = {
     "WAS": "Washington"
 }
 
+styles = {
+    1:"Fusion",
+    2:"Windows",
+    3:"Macintosh",
+    4:"WindowsVista",
+    5:"Plastique",
+    6:"Cleanlooks"
+}
+
 
 # today = d.datetime.today()
 
