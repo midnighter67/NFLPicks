@@ -14,8 +14,10 @@ from dotenv import load_dotenv
 from utilities import teams, styles
 import re
 
+# load environmental variables
 load_dotenv()
 
+# sqlalchemy setup
 Base = declarative_base()
 engine = create_engine(os.getenv("CONNECTION_STRING"))
 metadata = MetaData()
@@ -24,6 +26,7 @@ games = Table('picks', metadata, autoload_with=engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
+
 class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
@@ -31,18 +34,16 @@ class UI(QMainWindow):
         
         # load the ui file
         uic.loadUi("nfl_picks.ui", self)
+        
+        # set window title
         self.setWindowTitle("NFL Picks")
-        # self.setFixedWidth(950)
         
         
         # Geometry
-        #   slate visible: main(50, 50, 850, 910), test(580, 824, 75, 23)
-        #                  submit(480, 824, 70, 25), year(300, 824, 70, 25), week(390, 824, 70, 25)
-        #   slate hidden:  main(50, 50, 850, 500), test(580, 450, 75, 23)
-        #                  submit(480, 450, 70, 25), year(300, 450, 70, 25), week(390, 450, 70, 25)
+        #   home view: startup: 50, 50, 500, 300,  home button click: current, current, 500, 300
+        #   slate view: current, 50, 950, 900
         
        
-        
         # *********************************** WIDGETS *************************************
         # buttons
         self.submit = self.findChild(QPushButton, "submitButton")
@@ -50,9 +51,9 @@ class UI(QMainWindow):
         self.stats = self.findChild(QPushButton, "statsButton")
         self.home = self.findChild(QPushButton, "homeButton")
         self.save = self.findChild(QPushButton, "saveButton")
-        # HIDE THIS TEST BUTTON
+        
+        # hidden test buttons
         self.toggle = self.findChild(QPushButton, "toggleGroup")
-        # HIDE THIS TEST BUTTON
         self.toggleText = self.findChild(QPushButton, "toggleText")
         
         # combo boxes
@@ -222,12 +223,12 @@ class UI(QMainWindow):
         self.hScore19 = self.findChild(QLineEdit, "hScore19")
         # *********************************** END WIDGETS *************************************
         
-        ####################### ACTIONS #############################
+        # *********************************** ACTIONS *****************************************
         # populate dropdowns
         self.year.addItems([str(year) for year in range(2021, 2025)])
         self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
         
-        # set combo boxes to editable to set alignment
+        # set combo boxes to editable to center justify
         self.year.setEditable(True)
         self.week.setEditable(True)
  
@@ -245,17 +246,16 @@ class UI(QMainWindow):
         
         # set startup to small window with edit and stats buttons
         self.showHome()
-        # self.slate.setVisible(False)
-        # self.setPosition(0)
         
         # attach click functions
-        self.toggle.clicked.connect(self.changeGroupVisibility)
-        self.toggleText.clicked.connect(self.testText)
         self.submit.clicked.connect(self.getSlate)
         self.edit.clicked.connect(self.viewSlate)
-        self.stats.clicked.connect(self.showStats)
+        self.stats.clicked.connect(self.getStats)
         self.home.clicked.connect(self.showHome)
         self.save.clicked.connect(self.saveChanges)
+        # test functions
+        self.toggle.clicked.connect(self.changeGroupVisibility)
+        self.toggleText.clicked.connect(self.testText)
         
         # home team button clicks
         self.home0.clicked.connect(self.select)
@@ -300,15 +300,11 @@ class UI(QMainWindow):
         self.away17.clicked.connect(self.select)
         self.away18.clicked.connect(self.select)
         self.away19.clicked.connect(self.select)
-       
-        # self.home0.clicked.connect(lambda state, obj=self.home0 : self.getName(obj))
         
         
         # show the app
         self.show()
         
-    
-    
             
     def viewSlate(self):
         # Updates the window geometry, hides view/edit and stats buttons, shows the combo boxes and home button,
@@ -329,11 +325,11 @@ class UI(QMainWindow):
         self.slate.setVisible(True)
         self.resetSlate()
     
-    def showStats(self):
+    def getStats(self):
         pass
         
     def getSlate(self):
-        # Gets/displays the matchups/scores/picks/results for the season and week selectes with the year and week combo boxes
+        # Gets/displays the matchups/scores/picks/results for the season and week selected with the year and week combo boxes
         
         self.resetSlate()
         # set title
@@ -344,30 +340,36 @@ class UI(QMainWindow):
         
         space = 0
         previous = ""
+        # get data from database using the values for season and week from combo boxes
         slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
         
         for index, game in enumerate(slate):
             # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
-            print("gameid = ", game[1])
+            # print("gameid = ", game[1])
             day = game[6]
             if day != previous:
+                # print the abbreviated day on the slate
                 if index !=0:
                     space += 1
                 getattr(self, "day" + str(index + space)).setText(game[6][:3])
             else:
                 if day == "Sunday" and int(game[7][:2]) >= 18:
+                    # print 'night' in 'day' slate column if day is Sunday and time is 6pm or later
                     getattr(self, "day" + str(index + space)).setText("Night")
-                
+            # add away team and score to the slate 
             getattr(self, "away" + str(index + space)).setText(teams[game[8]])
             getattr(self, "aScore" + str(index + space)).setVisible(True)
             if game[9] != None:
                 getattr(self, "aScore" + str(index + space)).setText(str(game[9]))
+            # add the home team and score to the slate
             getattr(self, "home" + str(index + space)).setText(teams[game[10]])
             getattr(self, "hScore" + str(index + space)).setVisible(True)
             if game[11] != None:
                 getattr(self, "hScore" + str(index + space)).setText(str(game[11]))
+            # add 'OT' to slate if ot = 1
             if game[13] == 1:
                 getattr(self, "ot" + str(index + space)).setText("OT")
+            # bold the text for away or home if pick is 'a' or 'h'
             if game[17] == 'h':
                 getattr(self, "home" + str(index + space)).setStyleSheet("""
                         QPushButton {
@@ -376,7 +378,6 @@ class UI(QMainWindow):
                         }
                 """)
                 getattr(self, "result" + str(index + space)).setText("C" if game[11] > game[9] else "X")
-                print("picked home")
             elif game[17] == 'a':
                 getattr(self, "away" + str(index + space)).setStyleSheet("""
                         QPushButton {
@@ -385,45 +386,48 @@ class UI(QMainWindow):
                         }
                 """)
                 getattr(self, "result" + str(index + space)).setText("C" if game[9] > game[11] else "X")
-                print("picked away")
             previous = day
     
     def saveChanges(self):
-        # statement = update(table).values(columnNameA=63).where(table.columns.columnNameB=='Snoopy')
-        # session.execute(statement)
-        # session.commit()
+        # Update the database columns aScore, hScore, ot, pick for the current slate after clicking the save button
+        
         if self.slate.isVisible():
             for row in range(0,20):
-                gPick = ''
+                pick = ''
                 if getattr(self, "away" + str(row)).text() != '' and getattr(self, "home" + str(row)).text() != '':
+                    # Build the gameid from data in the slate row
                     a = [key for key, value in teams.items() if value == getattr(self, "away" + str(row)).text()]
                     h = [key for key, value in teams.items() if value == getattr(self, "home" + str(row)).text()]
                     id = self.year.currentText() + "_" + self.week.currentText().rjust(2,'0') + "_" + a[0] + "_" + h[0]
+                    # set 'pick' value based on the boldness of 'away' or 'home'
                     if getattr(self, "away" + str(row)).font().bold():
-                        gPick = "a"
+                        pick = "a"
                     elif getattr(self, "home" + str(row)).font().bold():
-                        gPick = "h"
+                        pick = "h"
                     overtime = 1 if getattr(self, "ot" + str(row)).text() == "OT" else 0
                     aScore = int(getattr(self, "aScore" + str(row)).text())
                     hScore = int(getattr(self, "hScore" + str(row)).text())
-                    print("id=", id, ", aScore=", aScore, ", hscore=", hScore, ", ot=", overtime, ", pick=", gPick)
-                    # write: aScore, hScore, ot, pick
-                    statement = update(games).values(ascore=aScore, hscore=hScore, ot=overtime, pick=gPick).where(games.columns.gameid==id)
+                    # print("id=", id, ", aScore=", aScore, ", hscore=", hScore, ", ot=", overtime, ", pick=", pick)
+                    # update database: aScore, hScore, ot, pick
+                    statement = update(games).values(ascore=aScore, hscore=hScore, ot=overtime, pick=pick).where(games.columns.gameid==id)
                     session.execute(statement)
             session.commit()
                     
-                
     
     def select(self):
         # Toggles the boldness of the selected button text and unbolds the button text of the opponent button if
         #   the selected button is changed to bold
         
+        # get the name of the button that was clicked
         ref = self.sender()
         btn = ref.objectName()
-        # team = ref.text()
+        # separate button name into 'home' or 'away' and the row 
         location = btn[0:4]
         position = btn[4:]
+        # oppBtn is the other button in the row of the clicked button
         oppBtn = ("away" + position) if location == "home" else ("home" + position)
+        # toggle the boldness of the clicked button and unbold the oppBtn if it is bold and 
+        #   the clicked button is set to bold
         if getattr(self, btn).font().bold():
             getattr(self, btn).setStyleSheet("""
                         QPushButton {
@@ -431,9 +435,6 @@ class UI(QMainWindow):
                             text-align: left;
                         }
             """)
-            # getattr(self, btn).setStyleSheet("font-weight: normal")
-            # getattr(self, btn).setStyleSheet("text-align: left")
-            
         else:
             getattr(self, btn).setStyleSheet("""
                         QPushButton {
@@ -441,17 +442,12 @@ class UI(QMainWindow):
                             text-align: left;
                         }
             """)
-            # getattr(self, btn).setStyleSheet("font-weight: bold")
-            # getattr(self, btn).setStyleSheet("text-align: left")
             getattr(self, oppBtn).setStyleSheet("""
                         QPushButton {
                             font-weight: normal;
                             text-align: left;
                         }
-            """)
-            # getattr(self, oppBtn).setStyleSheet("font-weight: normal")
-            # getattr(self, oppBtn).setStyleSheet("text-align: left")
-       
+            """)       
         
             
     def showHome(self):
@@ -1115,13 +1111,9 @@ class UI(QMainWindow):
         
     def changeGroupVisibility(self):
         if self.slate.isVisible():
-            # self.setGeometry(50, 50, 850, 500)
-            # self.toggle.setGeometry(580, 450, 75, 23)
             self.setPosition(0)
             self.slate.setVisible(False)
         else:
-            # self.setGeometry(50, 50, 850, 910)
-            # self.toggle.setGeometry(580, 824, 75, 23)
             self.setPosition(1)
             self.slate.setVisible(True)
             
@@ -1154,10 +1146,12 @@ class UI(QMainWindow):
 #################################### END TESTING CODE ####################################################
 ##########################################################################################################
         
-        
+       
 app = QApplication(sys.argv)
 app.setStyle(styles[1])
 UIWindow = UI()
 app.exec_()
+session.close()
+
 
 
