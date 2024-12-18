@@ -31,13 +31,11 @@ class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
         
-        
-        # load the ui file
+        # load the ui file created in the designer
         uic.loadUi("nfl_picks.ui", self)
         
         # set window title
         self.setWindowTitle("NFL Picks")
-        
         
         # Geometry
         #   home view: startup: 50, 50, 500, 300,  home button click: current, current, 500, 300
@@ -67,51 +65,45 @@ class UI(QMainWindow):
         # group box
         self.slate = self.findChild(QGroupBox, "slate")
         
-        # group box widgets
-        # day labels
+        # group box (self.slate) widgets
         for row in range(0,20):
+            # day labels
             getattr(self, "day" + str(row)).findChild(QLabel,"day" + str(row))
         
-        # OT labels
-        for row in range(0,20):
-            getattr(self, "ot" + str(row)).findChild(QLabel,"ot" + str(row))
+            # OT push buttons
+            getattr(self, "ot" + str(row)).findChild(QPushButton,"ot" + str(row))
            
-        # pick result labels
-        for row in range(0,20):
+            # pick result labels
             getattr(self, "result" + str(row)).findChild(QLabel,"result" + str(row))
         
-        # away team labels
-        for row in range(0,20):
+            # away team push buttons
             getattr(self, "away" + str(row)).findChild(QPushButton,"away" + str(row))
         
-        # home team labels
-        for row in range(0,20):
+            # home team push buttons
             getattr(self, "home" + str(row)).findChild(QPushButton,"home" + str(row))
         
-        # away score line edit boxes
-        for row in range(0,20):
+            # away score line edit boxes
             getattr(self, "aScore" + str(row)).findChild(QLineEdit,"aScore" + str(row))
         
-        # home score line edit boxes
-        for row in range(0,20):
+            # home score line edit boxes
             getattr(self, "hScore" + str(row)).findChild(QLineEdit,"hScore" + str(row))
         
         # *********************************** END WIDGETS *************************************
         
         # *********************************** ACTIONS *****************************************
-        # populate dropdowns
+        # populate combo boxes
         self.year.addItems([str(year) for year in range(2021, 2025)])
         self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
         
-        # set combo boxes to editable to center justify
+        # set combo boxes to editable (to center justify)
         self.year.setEditable(True)
         self.week.setEditable(True)
  
-        # getting the line edit of combo boxes
+        # getting the line edit of combo boxes (to center justify)
         year_line_edit = self.year.lineEdit()
         week_line_edit = self.week.lineEdit()
  
-        # setting line edit alignment to the center
+        # setting line edit alignment to the center 
         year_line_edit.setAlignment(Qt.AlignCenter)
         week_line_edit.setAlignment(Qt.AlignCenter)
  
@@ -132,14 +124,20 @@ class UI(QMainWindow):
         self.toggle.clicked.connect(self.changeGroupVisibility)
         self.toggleText.clicked.connect(self.testText)
         
-        # home team button clicks
+        
         for row in range(0,20):
+            # home team button function
             getattr(self, "home" + str(row)).clicked.connect(self.select)
         
-        # away team button clicks
-        for row in range(0,20):
+            # away team button function
             getattr(self, "away" + str(row)).clicked.connect(self.select)
+            
+            # ot button function
+            getattr(self, "ot" + str(row)).clicked.connect(self.otToggle)
         
+        self.ot1.setText('FU!')
+        
+        # *********************************** END ACTIONS ***********************************
         
         # show the app
         self.show()
@@ -226,6 +224,14 @@ class UI(QMainWindow):
                 """)
                 getattr(self, "result" + str(index + space)).setText("C" if game[9] > game[11] else "X")
             previous = day
+            
+    def otToggle(self):
+        ref = self.sender()
+        btn = ref.objectName()
+        if getattr(self, btn).text() == '':
+            getattr(self, btn).setText('OT')
+        else:
+            getattr(self, btn).setText('')
     
     def saveChanges(self):
         # Update the database columns aScore, hScore, ot, pick for the current slate after clicking the save button
