@@ -62,6 +62,10 @@ class UI(QMainWindow):
         self.yearLabel = self.findChild(QLabel, "yearLabel")
         self.weekLabel = self.findChild(QLabel, "weekLabel")
         
+        # record and percentage labels
+        self.record = self.findChild(QLabel, "recordLabel")
+        self.percentage = self.findChild(QLabel, "percentageLabel")
+        
         # group box
         self.slate = self.findChild(QGroupBox, "slate")
         
@@ -111,9 +115,6 @@ class UI(QMainWindow):
         year_line_edit.setReadOnly(True)
         week_line_edit.setReadOnly(True)
         
-        # set startup to small window with edit and stats buttons
-        self.showHome()
-        
         # attach click functions
         self.submit.clicked.connect(self.getSlate)
         self.edit.clicked.connect(self.viewSlate)
@@ -135,7 +136,8 @@ class UI(QMainWindow):
             # ot button function
             getattr(self, "ot" + str(row)).clicked.connect(self.otToggle)
         
-        self.ot1.setText('FU!')
+        # set startup to small window with edit and stats buttons
+        self.showHome()
         
         # *********************************** END ACTIONS ***********************************
         
@@ -177,8 +179,10 @@ class UI(QMainWindow):
         
         space = 0
         previous = ""
+        right = 0
+        wrong = 0
         # get data from database using the values for season and week from combo boxes
-        slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week)
+        slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week).order_by(games.columns.id)
         
         for index, game in enumerate(slate):
             # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
@@ -188,7 +192,7 @@ class UI(QMainWindow):
                 # print the abbreviated day on the slate
                 if index !=0:
                     space += 1
-                getattr(self, "day" + str(index + space)).setText(game[6][:3])
+                getattr(self, "day" + str(index + space)).setText(day[:3])
             else:
                 if day == "Sunday" and int(game[7][:2]) >= 18:
                     # print 'night' in 'day' slate column if day is Sunday and time is 6pm or later
@@ -214,7 +218,6 @@ class UI(QMainWindow):
                             text-align: left;
                         }
                 """)
-                getattr(self, "result" + str(index + space)).setText("C" if game[11] > game[9] else "X")
             elif game[17] == 'a':
                 getattr(self, "away" + str(index + space)).setStyleSheet("""
                         QPushButton {
@@ -222,8 +225,16 @@ class UI(QMainWindow):
                             text-align: left;
                         }
                 """)
-                getattr(self, "result" + str(index + space)).setText("C" if game[9] > game[11] else "X")
+            if game[18] == 0:
+                result = 'X'
+            elif game[18] == 1:
+                result = 'C'
+            else:
+                result = ''
+            getattr(self, "result" + str(index + space)).setText(result)
             previous = day
+        # self.record.setText(str(right) + " - " + str(wrong))
+        # self.percentage.setText(str(round(right/(right + wrong),3) * 100) + "%")
             
     def otToggle(self):
         ref = self.sender()
@@ -238,7 +249,7 @@ class UI(QMainWindow):
         
         if self.slate.isVisible():
             for row in range(0,20):
-                pick = ''
+                pick = None
                 if getattr(self, "away" + str(row)).text() != '' and getattr(self, "home" + str(row)).text() != '':
                     # Build the gameid from data in the slate row
                     a = [key for key, value in teams.items() if value == getattr(self, "away" + str(row)).text()]
@@ -250,13 +261,23 @@ class UI(QMainWindow):
                     elif getattr(self, "home" + str(row)).font().bold():
                         pick = "h"
                     overtime = 1 if getattr(self, "ot" + str(row)).text() == "OT" else 0
-                    aScore = int(getattr(self, "aScore" + str(row)).text())
-                    hScore = int(getattr(self, "hScore" + str(row)).text())
-                    # print("id=", id, ", aScore=", aScore, ", hscore=", hScore, ", ot=", overtime, ", pick=", pick)
-                    # update database: aScore, hScore, ot, pick
-                    statement = update(games).values(ascore=aScore, hscore=hScore, ot=overtime, pick=pick).where(games.columns.gameid==id)
+                    if getattr(self, "aScore" + str(row)).text() != '' and  getattr(self, "hScore" + str(row)).text() != '':
+                        aScore = int(getattr(self, "aScore" + str(row)).text())
+                        hScore = int(getattr(self, "hScore" + str(row)).text())
+                        match pick:
+                            case 'h':
+                                result = 1 if hScore > aScore else 0
+                            case 'a':
+                                result = 1 if aScore > hScore else 0
+                            case _:
+                                result = 0
+                        # update database: aScore, hScore, ot, pick, result
+                        statement = update(games).values(ascore=aScore, hscore=hScore, ot=overtime, pick=pick, result=result).where(games.columns.gameid==id)
+                    else:
+                        statement = update(games).values(ot=overtime, pick=pick).where(games.columns.gameid==id)
                     session.execute(statement)
             session.commit()
+        self.getSlate()
                     
     
     def select(self):
@@ -328,6 +349,8 @@ class UI(QMainWindow):
         
     # clear the form
     def resetSlate(self):
+        self.record.setText('')
+        self.percentage.setText('')
         for row in range(0,20):
             getattr(self, "aScore" + str(row)).setText('')
             getattr(self, "hScore" + str(row)).setText('')
