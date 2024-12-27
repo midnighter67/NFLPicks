@@ -182,9 +182,11 @@ class UI(QMainWindow):
         right = 0
         wrong = 0
         # get data from database using the values for season and week from combo boxes
-        slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week).order_by(games.columns.id)
+        slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week).order_by(games.columns.gameday).order_by(games.columns.time)
+        print(slate)
         
         for index, game in enumerate(slate):
+            print('index = ', index, ' , space = ', space, ', sum = ', index + space, ', id = ', game[0], ', gameid = ', game[1])
             # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
             # print("gameid = ", game[1])
             day = game[6]
@@ -373,6 +375,9 @@ class UI(QMainWindow):
                             text-align: left;
                         }
             """)
+            
+    def getRams(self):
+        pass
             
     ########################################################################################################
     #################################### FOR TESTING #######################################################
