@@ -63,7 +63,8 @@ class UI(QMainWindow):
         self.weekLabel = self.findChild(QLabel, "weekLabel")
         
         # record and percentage labels
-        self.record = self.findChild(QLabel, "recordLabel")
+        self.recordWeek = self.findChild(QLabel, "recordWeekLabel")
+        self.recordToDate = self.findChild(QLabel, "recordToDateLabel")
         self.percentage = self.findChild(QLabel, "percentageLabel")
         
         # group box
@@ -163,6 +164,10 @@ class UI(QMainWindow):
         self.home.setVisible(True)
         self.slate.setVisible(True)
         self.resetSlate()
+        # show stats labels
+        self.recordWeek.setVisible(True)
+        self.recordToDate.setVisible(True)
+        self.percentage.setVisible(True)
     
     def getStats(self):
         pass
@@ -183,10 +188,10 @@ class UI(QMainWindow):
         wrong = 0
         # get data from database using the values for season and week from combo boxes
         slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week).order_by(games.columns.gameday).order_by(games.columns.time)
-        print(slate)
+        # print(slate)
         
         for index, game in enumerate(slate):
-            print('index = ', index, ' , space = ', space, ', sum = ', index + space, ', id = ', game[0], ', gameid = ', game[1])
+            # print('index = ', index, ' , space = ', space, ', sum = ', index + space, ', id = ', game[0], ', gameid = ', game[1])
             # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
             # print("gameid = ", game[1])
             day = game[6]
@@ -235,8 +240,14 @@ class UI(QMainWindow):
                 result = ''
             getattr(self, "result" + str(index + space)).setText(result)
             previous = day
-        # self.record.setText(str(right) + " - " + str(wrong))
-        # self.percentage.setText(str(round(right/(right + wrong),3) * 100) + "%")
+        # weekly and year-to-date stats
+        rightWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 1).count()
+        wrongWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 0).count()
+        rightToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 1).count()
+        wrongToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 0).count()
+        self.recordWeek.setText(str(rightWeek) + " - " + str(wrongWeek))
+        self.recordToDate.setText(str(rightToDate) + " - " + str(wrongToDate))
+        self.percentage.setText(f"{rightToDate/(rightToDate + wrongToDate) * 100:.1f}" + "%")      
             
     def otToggle(self):
         ref = self.sender()
@@ -329,7 +340,7 @@ class UI(QMainWindow):
             x, y = 50, 50
         self.setGeometry(x, y, 500, 300)
         
-        # hide buttons
+        # hide buttons and labels       
         self.setFixedWidth(500)
         self.submit.setVisible(False)
         self.yearLabel.setVisible(False)
@@ -338,6 +349,9 @@ class UI(QMainWindow):
         self.week.setVisible(False)
         self.home.setVisible(False)
         self.slate.setVisible(False)
+        self.recordWeek.setVisible(False)
+        self.recordToDate.setVisible(False)
+        self.percentage.setVisible(False)
         # test buttons
         self.toggle.setVisible(False)
         self.toggleText.setVisible(False)
@@ -351,7 +365,8 @@ class UI(QMainWindow):
         
     # clear the form
     def resetSlate(self):
-        self.record.setText('')
+        self.recordWeek.setText('')
+        self.recordToDate.setText('')
         self.percentage.setText('')
         for row in range(0,20):
             getattr(self, "aScore" + str(row)).setText('')

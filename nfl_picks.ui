@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
+    <width>970</width>
     <height>900</height>
    </rect>
   </property>
@@ -3200,12 +3200,36 @@
      <string>save</string>
     </property>
    </widget>
-   <widget class="QLabel" name="recordLabel">
+   <widget class="QLabel" name="recordWeekLabel">
     <property name="geometry">
      <rect>
-      <x>850</x>
+      <x>830</x>
       <y>420</y>
-      <width>60</width>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>16</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="recordToDateLabel">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>450</y>
+      <width>100</width>
       <height>30</height>
      </rect>
     </property>
@@ -3227,9 +3251,9 @@
    <widget class="QLabel" name="percentageLabel">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>450</y>
-      <width>60</width>
+      <x>830</x>
+      <y>480</y>
+      <width>100</width>
       <height>30</height>
      </rect>
     </property>
@@ -3244,9 +3268,6 @@
     <property name="text">
      <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -3254,7 +3275,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>956</width>
+     <width>970</width>
      <height>21</height>
     </rect>
    </property>
