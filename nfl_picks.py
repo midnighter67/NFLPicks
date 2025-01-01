@@ -49,6 +49,7 @@ class UI(QMainWindow):
         self.stats = self.findChild(QPushButton, "statsButton")
         self.home = self.findChild(QPushButton, "homeButton")
         self.save = self.findChild(QPushButton, "saveButton")
+        self.schedule = self.findChild(QPushButton, "scheduleButton")
         
         # hidden test buttons
         self.toggle = self.findChild(QPushButton, "toggleGroup")
@@ -62,15 +63,17 @@ class UI(QMainWindow):
         self.yearLabel = self.findChild(QLabel, "yearLabel")
         self.weekLabel = self.findChild(QLabel, "weekLabel")
         
-        # record and percentage labels
+        # slate record and percentage labels
         self.recordWeek = self.findChild(QLabel, "recordWeekLabel")
         self.recordToDate = self.findChild(QLabel, "recordToDateLabel")
         self.percentage = self.findChild(QLabel, "percentageLabel")
         
-        # group box
+        # group boxes
         self.slate = self.findChild(QGroupBox, "slate")
+        self.ramsSchedule = self.findChild(QGroupBox, "ramsSchedule")
+        self.rams = self.findChild(QGroupBox, "ramsSchedule")
         
-        # group box (self.slate) widgets
+        # slate group box widgets
         for row in range(0,20):
             # day labels
             getattr(self, "day" + str(row)).findChild(QLabel,"day" + str(row))
@@ -92,7 +95,41 @@ class UI(QMainWindow):
         
             # home score line edit boxes
             getattr(self, "hScore" + str(row)).findChild(QLineEdit,"hScore" + str(row))
-        
+            
+        # schedule group box widgets
+        for row in range(0,18):
+            # day labels
+            getattr(self, "rsDay" + str(row)).findChild(QLabel,"rsDay" + str(row))
+            
+            # week labels
+            getattr(self, "rsWeek" + str(row)).findChild(QLabel,"rsWeek" + str(row))
+            
+            # date labels
+            getattr(self, "date" + str(row)).findChild(QLabel,"date" + str(row))
+            
+            # ot labels
+            getattr(self, "rsOt" + str(row)).findChild(QLabel,"rsOt" + str(row))
+            
+            # W/L labels
+            getattr(self, "wl" + str(row)).findChild(QLabel,"wl" + str(row))
+            
+            # record labels
+            getattr(self, "record" + str(row)).findChild(QLabel,"record" + str(row))
+            
+            # spread line edit boxes
+            getattr(self, "spread" + str(row)).findChild(QLabel,"spread" + str(row))
+            
+            # away team labels
+            getattr(self, "rsAway" + str(row)).findChild(QLabel,"rsAway" + str(row))
+            
+            # home team labels
+            getattr(self, "rsHome" + str(row)).findChild(QLabel,"rsHome" + str(row))
+            
+            # away score line edit boxes
+            getattr(self, "rsaScore" + str(row)).findChild(QLabel,"rsaScore" + str(row))
+            
+            # home score line edit boxes
+            getattr(self, "rshScore" + str(row)).findChild(QLabel,"rshScore" + str(row))          
         # *********************************** END WIDGETS *************************************
         
         # *********************************** ACTIONS *****************************************
@@ -122,6 +159,7 @@ class UI(QMainWindow):
         self.stats.clicked.connect(self.getStats)
         self.home.clicked.connect(self.showHome)
         self.save.clicked.connect(self.saveChanges)
+        self.schedule.clicked.connect(self.viewSchedule)
         # test functions
         self.toggle.clicked.connect(self.changeGroupVisibility)
         self.toggleText.clicked.connect(self.testText)
@@ -137,6 +175,8 @@ class UI(QMainWindow):
             # ot button function
             getattr(self, "ot" + str(row)).clicked.connect(self.otToggle)
         
+        # move schedule group to correct position
+        self.ramsSchedule.setGeometry(40,20,855,800)
         # set startup to small window with edit and stats buttons
         self.showHome()
         
@@ -146,15 +186,40 @@ class UI(QMainWindow):
         self.show()
         
             
+    
+    def sidebarButtons(self, view):
+       
+        if view == 'slate':
+            x = 830
+            ySubmit = 240
+            ySave = 300
+            yHome = 340
+            submitText = 'get slate'
+        elif view == 'schedule':
+            x = 925
+            ySubmit = 160
+            ySave = 220
+            yHome = 260
+            submitText = 'get schedule'
+        self.yearLabel.setGeometry(x,90,100,30)
+        self.year.setGeometry(x,120,100,30)
+        self.submit.setGeometry(x,ySubmit,100,30)
+        self.save.setGeometry(x,ySave,100,30)
+        self.home.setGeometry(x,yHome,100,30)
+        self.submit.setText(submitText)
+        
+    
     def viewSlate(self):
-        # Updates the window geometry, hides view/edit and stats buttons, shows the combo boxes and home button,
-        #   and displays an empty slate
+        # Updates the window geometry; hides view/edit, schedule, and stats buttons, shows the combo boxes and home button;
+        #   displays an empty slate
         
         self.setGeometry(self.x()+1, 50, 950, 900)
         self.setFixedWidth(950)
+        self.sidebarButtons('slate')
         # hide home buttons
         self.edit.setVisible(False)
         self.stats.setVisible(False)
+        self.schedule.setVisible(False)
         # show edit buttons
         self.submit.setVisible(True)
         self.yearLabel.setVisible(True)
@@ -168,6 +233,29 @@ class UI(QMainWindow):
         self.recordWeek.setVisible(True)
         self.recordToDate.setVisible(True)
         self.percentage.setVisible(True)
+        
+    def viewSchedule(self):
+        # Updates the window geometry; hides view/edit, schedule, and stats buttons; shows the year combo box and home button;
+        #   displays an empty schedule template
+        
+        self.setGeometry(self.x()+1, 50, 1062, 870)  
+        self.setFixedWidth(1062)
+        self.sidebarButtons('schedule')
+        # hide home buttons
+        self.edit.setVisible(False)
+        self.stats.setVisible(False)
+        self.schedule.setVisible(False)
+        self.weekLabel.setVisible(False)
+        self.week.setVisible(False)
+        # show edit buttons
+        self.submit.setVisible(True)
+        self.yearLabel.setVisible(True)
+        self.year.setVisible(True)
+        # self.weekLabel.setVisible(True)
+        # self.week.setVisible(True)
+        self.home.setVisible(True)
+        self.ramsSchedule.setVisible(True)
+        self.resetSchedule()
     
     def getStats(self):
         pass
@@ -247,7 +335,10 @@ class UI(QMainWindow):
         wrongToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 0).count()
         self.recordWeek.setText(str(rightWeek) + " - " + str(wrongWeek))
         self.recordToDate.setText(str(rightToDate) + " - " + str(wrongToDate))
-        self.percentage.setText(f"{rightToDate/(rightToDate + wrongToDate) * 100:.1f}" + "%")      
+        self.percentage.setText(f"{rightToDate/(rightToDate + wrongToDate) * 100:.1f}" + "%")   
+        
+    def getRams(self):
+        pass   
             
     def otToggle(self):
         ref = self.sender()
@@ -340,7 +431,7 @@ class UI(QMainWindow):
             x, y = 50, 50
         self.setGeometry(x, y, 500, 300)
         
-        # hide buttons and labels       
+        # hide buttons, labels, and group boxes      
         self.setFixedWidth(500)
         self.submit.setVisible(False)
         self.yearLabel.setVisible(False)
@@ -349,6 +440,8 @@ class UI(QMainWindow):
         self.week.setVisible(False)
         self.home.setVisible(False)
         self.slate.setVisible(False)
+        self.schedule.setVisible(False)
+        self.ramsSchedule.setVisible(False)
         self.recordWeek.setVisible(False)
         self.recordToDate.setVisible(False)
         self.percentage.setVisible(False)
@@ -357,10 +450,12 @@ class UI(QMainWindow):
         self.toggleText.setVisible(False)
         
         # place buttons on main window
-        self.edit.setGeometry(125, 170, 100, 30)
+        self.edit.setGeometry(50, 170, 100, 30)
         self.edit.setVisible(True)
-        self.stats.setGeometry(275, 170, 100, 30)
-        self.stats.setVisible(True)   
+        self.stats.setGeometry(200, 170, 100, 30)
+        self.stats.setVisible(True)
+        self.schedule.setGeometry(350, 170, 100, 30)   
+        self.schedule.setVisible(True)
         
         
     # clear the form
@@ -391,8 +486,36 @@ class UI(QMainWindow):
                         }
             """)
             
-    def getRams(self):
-        pass
+    def resetSchedule(self):
+        for row in range(0,18):
+                getattr(self, "rsDay" + str(row)).setText('')
+                getattr(self, "rsWeek" + str(row)).setText('')
+                getattr(self, "date" + str(row)).setText('')
+                # getattr(self, "rsAway" + str(row)).setText('')
+                getattr(self, "rsaScore" + str(row)).setText('')
+                getattr(self, "rsaScore" + str(row)).setVisible(False)
+                getattr(self, "ot" + str(row)).setText('')
+                # getattr(self, "rsHome" + str(row)).setText('')
+                getattr(self, "rshScore" + str(row)).setText('')
+                getattr(self, "rshScore" + str(row)).setVisible(False)
+                getattr(self, "wl" + str(row)).setText('')
+                getattr(self, "record" + str(row)).setText('')
+                getattr(self, "spread" + str(row)).setText('')
+                getattr(self, "spread" + str(row)).setVisible(False)
+                getattr(self, "rsAway" + str(row)).setText('')
+                getattr(self, "rsAway" + str(row)).setStyleSheet("""
+                            QLabel {
+                                font-weight: normal;
+                                text-align: left;
+                            }
+                """)
+                getattr(self, "rsHome" + str(row)).setText('')
+                getattr(self, "rsHome" + str(row)).setStyleSheet("""
+                            QLabel {
+                                font-weight: normal;
+                                text-align: left;
+                            }
+                """)
             
     ########################################################################################################
     #################################### FOR TESTING #######################################################
