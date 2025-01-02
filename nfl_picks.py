@@ -6,7 +6,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
 import psycopg2
-from sqlalchemy import create_engine, MetaData, Table, insert, update
+from sqlalchemy import create_engine, MetaData, Table, update, or_, and_
 from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy.ext.automap import automap_base
 import os
@@ -154,7 +154,7 @@ class UI(QMainWindow):
         week_line_edit.setReadOnly(True)
         
         # attach click functions
-        self.submit.clicked.connect(self.getSlate)
+        self.submit.clicked.connect(self.getView)
         self.edit.clicked.connect(self.viewSlate)
         self.stats.clicked.connect(self.getStats)
         self.home.clicked.connect(self.showHome)
@@ -176,7 +176,7 @@ class UI(QMainWindow):
             getattr(self, "ot" + str(row)).clicked.connect(self.otToggle)
         
         # move schedule group to correct position
-        self.ramsSchedule.setGeometry(40,20,855,800)
+        self.ramsSchedule.setGeometry(40,20,935,800) # 855
         # set startup to small window with edit and stats buttons
         self.showHome()
         
@@ -187,8 +187,13 @@ class UI(QMainWindow):
         
             
     
+    def getView(self):
+        if self.slate.isVisible():
+            self.getSlate()
+        elif self.ramsSchedule.isVisible():
+            self.getRams()
+    
     def sidebarButtons(self, view):
-       
         if view == 'slate':
             x = 830
             ySubmit = 240
@@ -196,7 +201,7 @@ class UI(QMainWindow):
             yHome = 340
             submitText = 'get slate'
         elif view == 'schedule':
-            x = 925
+            x = 1005 # 925
             ySubmit = 160
             ySave = 220
             yHome = 260
@@ -238,8 +243,8 @@ class UI(QMainWindow):
         # Updates the window geometry; hides view/edit, schedule, and stats buttons; shows the year combo box and home button;
         #   displays an empty schedule template
         
-        self.setGeometry(self.x()+1, 50, 1062, 870)  
-        self.setFixedWidth(1062)
+        self.setGeometry(self.x()+1, 50, 1142, 870)  # 1062
+        self.setFixedWidth(1142)
         self.sidebarButtons('schedule')
         # hide home buttons
         self.edit.setVisible(False)
@@ -275,13 +280,12 @@ class UI(QMainWindow):
         right = 0
         wrong = 0
         # get data from database using the values for season and week from combo boxes
-        slate = session.query(games).where(games.columns.season == year).where(games.columns.week == week).order_by(games.columns.gameday).order_by(games.columns.time)
+        slate = session.query(games).filter(and_(games.columns.season == year, games.columns.week == week))\
+                                    .order_by(games.columns.gameday)\
+                                    .order_by(games.columns.time)
         # print(slate)
         
         for index, game in enumerate(slate):
-            # print('index = ', index, ' , space = ', space, ', sum = ', index + space, ', id = ', game[0], ', gameid = ', game[1])
-            # print(game[6], "  ", game[8], " ", game[9], "  ", game[10], " ", game[11], "   ot = ", game[13], "  ", game[5], "  ", game[7])
-            # print("gameid = ", game[1])
             day = game[6]
             if day != previous:
                 # print the abbreviated day on the slate
@@ -338,7 +342,88 @@ class UI(QMainWindow):
         self.percentage.setText(f"{rightToDate/(rightToDate + wrongToDate) * 100:.1f}" + "%")   
         
     def getRams(self):
-        pass   
+        # Gets/displays the the Rams schedule, scores, spread, etc. for the selected year
+        
+        self.resetSchedule()
+        # set title
+        year = self.year.currentText()
+        title = "Rams - " + f"{year}"
+        self.ramsSchedule.setTitle(title)   
+        
+        # get data from database using the values for season and week from combo boxes
+        schedule = session.query(games).filter(and_(games.columns.season == year, games.columns.type == 'REG'))\
+                                       .filter(or_(games.columns.home == 'LA', games.columns.away == 'LA'))\
+                                       .order_by(games.columns.week)
+        space = 0
+        previous = 0
+        w = 0
+        l = 0
+        t = 0
+        for index, game in enumerate(schedule):
+            week = game[4]
+            weekday = game[6]
+            # check for bye week
+            if week != previous + 1:
+                getattr(self, "rsWeek" + str(index + space)).setText(str(week - 1))
+                getattr(self, "rsAway" + str(index + space)).setText("BYE")
+                space += 1
+            # day
+            if (weekday == 'Sunday' and game[7][:2] >= '18') or weekday != 'Sunday':
+                getattr(self, "rsDay" + str(index + space)).setText(game[6][:3])
+                
+            # date
+            date = game[5][5:7].lstrip("0") + '-' + game[5][8:].lstrip("0") + '-' + game[5][2:4]
+            getattr(self, "date" + str(index + space)).setText(date)
+            # away team
+            getattr(self, "rsAway" + str(index + space)).setText(teams[game[8]])
+            # away score
+            if game[9] != None:
+                getattr(self, "rsaScore" + str(index + space)).setText(str(game[9]))
+            getattr(self, "rsaScore" + str(index + space)).setVisible(True)
+            # OT
+            if game[13] == 1:
+                getattr(self, "rsOt" + str(index + space)).setText("OT")
+            # home team
+            getattr(self, "rsHome" + str(index + space)).setText(teams[game[10]])
+            # home score
+            if game[11] != None:
+                getattr(self, "rshScore" + str(index + space)).setText(str(game[11]))
+            getattr(self, "rshScore" + str(index + space)).setVisible(True)
+            # W/L
+            if game[9] != None and game[11] != None:
+                if game[9] == game[11]:
+                    getattr(self, "wl" + str(index + space)).setText("T")
+                    t += 1
+                elif game[8] ==  "LA":
+                    if game[9] > game[11]:
+                        getattr(self, "wl" + str(index + space)).setText("W")
+                        w += 1
+                    elif  game[9] < game[11]:
+                        getattr(self, "wl" + str(index + space)).setText("L")
+                        l += 1
+                else:
+                    if game[9] < game[11]:
+                        getattr(self, "wl" + str(index + space)).setText("W")
+                        w += 1
+                    elif  game[9] > game[11]:
+                        getattr(self, "wl" + str(index + space)).setText("L")
+                        l += 1
+                # record
+                if t == 0:
+                    getattr(self, "record" + str(index + space)).setText(str(w) + "-" + str(l))
+                else:
+                    getattr(self, "record" + str(index + space)).setText(str(w) + "-" + str(l) + "-" + str(t))
+            # spread
+            if game[14] != None:
+                if game[14] > 0:
+                    spread = "+" +  str(game[14])
+                else:
+                    spread = str(game[14])
+                getattr(self, "spread" + str(index + space)).setText(spread)
+            getattr(self, "spread" + str(index + space)).setVisible(True)
+            # week
+            getattr(self, "rsWeek" + str(index + space)).setText(str(game[4]))
+            previous = week
             
     def otToggle(self):
         ref = self.sender()
@@ -424,7 +509,7 @@ class UI(QMainWindow):
         # Shows the home UI with view/edit and stats buttons.  Clears the slate. 
         
         # set main window size
-        if self.slate.isVisible():
+        if self.slate.isVisible() or self.ramsSchedule.isVisible():
             x = self.x()+1
             y = self.y()+31
         else: 
@@ -494,7 +579,7 @@ class UI(QMainWindow):
                 # getattr(self, "rsAway" + str(row)).setText('')
                 getattr(self, "rsaScore" + str(row)).setText('')
                 getattr(self, "rsaScore" + str(row)).setVisible(False)
-                getattr(self, "ot" + str(row)).setText('')
+                getattr(self, "rsOt" + str(row)).setText('')
                 # getattr(self, "rsHome" + str(row)).setText('')
                 getattr(self, "rshScore" + str(row)).setText('')
                 getattr(self, "rshScore" + str(row)).setVisible(False)

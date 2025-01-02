@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1898</width>
+    <width>2141</width>
     <height>900</height>
    </rect>
   </property>
@@ -1815,7 +1815,7 @@
       </font>
      </property>
      <property name="text">
-      <string/>
+      <string>Washington Commanders</string>
      </property>
      <property name="flat">
       <bool>true</bool>
@@ -3274,7 +3274,7 @@
      <rect>
       <x>990</x>
       <y>20</y>
-      <width>855</width>
+      <width>935</width>
       <height>800</height>
      </rect>
     </property>
@@ -3361,24 +3361,25 @@
       <rect>
        <x>200</x>
        <y>70</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="text">
-      <string>Washington Commanders</string>
+      <string>Los Angeles Chargers</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="rsaScore0">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -3400,7 +3401,7 @@
     <widget class="QPushButton" name="rsOt0">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -3416,16 +3417,17 @@
     <widget class="QLabel" name="rsHome0">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>70</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -3435,7 +3437,7 @@
     <widget class="QLineEdit" name="rshScore0">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -3451,7 +3453,7 @@
     <widget class="QLabel" name="wl0">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>70</y>
        <width>30</width>
        <height>30</height>
@@ -3473,7 +3475,7 @@
     <widget class="QLabel" name="record0">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>70</y>
        <width>40</width>
        <height>30</height>
@@ -3489,7 +3491,7 @@
     <widget class="QLineEdit" name="spread0">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>70</y>
        <width>45</width>
        <height>30</height>
@@ -3498,13 +3500,16 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="Line" name="line_2">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>50</y>
-       <width>815</width>
+       <width>895</width>
        <height>16</height>
       </rect>
      </property>
@@ -3554,7 +3559,7 @@
     <widget class="QLabel" name="rsHeader2">
      <property name="geometry">
       <rect>
-       <x>265</x>
+       <x>285</x>
        <y>20</y>
        <width>30</width>
        <height>30</height>
@@ -3572,7 +3577,7 @@
     <widget class="QLabel" name="rsHeader4">
      <property name="geometry">
       <rect>
-       <x>535</x>
+       <x>595</x>
        <y>20</y>
        <width>30</width>
        <height>30</height>
@@ -3590,7 +3595,7 @@
     <widget class="QLabel" name="rsHeader3">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>20</y>
        <width>30</width>
        <height>30</height>
@@ -3608,7 +3613,7 @@
     <widget class="QLabel" name="rsHeader5">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>20</y>
        <width>30</width>
        <height>30</height>
@@ -3626,7 +3631,7 @@
     <widget class="QLabel" name="rsHeader6">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>20</y>
        <width>30</width>
        <height>30</height>
@@ -3644,7 +3649,7 @@
     <widget class="QLabel" name="rsHeader7">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>20</y>
        <width>40</width>
        <height>30</height>
@@ -3665,7 +3670,7 @@
     <widget class="QLabel" name="rsHeader8">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>20</y>
        <width>45</width>
        <height>30</height>
@@ -3686,16 +3691,17 @@
     <widget class="QLabel" name="rsHome1">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>110</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -3746,7 +3752,7 @@
     <widget class="QLabel" name="record1">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>110</y>
        <width>40</width>
        <height>30</height>
@@ -3782,7 +3788,7 @@
     <widget class="QLabel" name="wl1">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -3804,7 +3810,7 @@
     <widget class="QPushButton" name="rsOt1">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -3822,12 +3828,13 @@
       <rect>
        <x>200</x>
        <y>110</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -3839,7 +3846,7 @@
     <widget class="QLineEdit" name="rsaScore1">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -3861,7 +3868,7 @@
     <widget class="QLineEdit" name="spread1">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>110</y>
        <width>45</width>
        <height>30</height>
@@ -3870,11 +3877,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore1">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>110</y>
        <width>30</width>
        <height>30</height>
@@ -3890,16 +3900,17 @@
     <widget class="QLabel" name="rsHome2">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>150</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -3950,7 +3961,7 @@
     <widget class="QLabel" name="record2">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>150</y>
        <width>40</width>
        <height>30</height>
@@ -3986,7 +3997,7 @@
     <widget class="QLabel" name="wl2">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -4008,7 +4019,7 @@
     <widget class="QPushButton" name="rsOt2">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -4026,12 +4037,13 @@
       <rect>
        <x>200</x>
        <y>150</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -4043,7 +4055,7 @@
     <widget class="QLineEdit" name="rsaScore2">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -4065,7 +4077,7 @@
     <widget class="QLineEdit" name="spread2">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>150</y>
        <width>45</width>
        <height>30</height>
@@ -4074,11 +4086,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore2">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>150</y>
        <width>30</width>
        <height>30</height>
@@ -4094,16 +4109,17 @@
     <widget class="QLabel" name="rsHome3">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>190</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -4154,7 +4170,7 @@
     <widget class="QLabel" name="record3">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>190</y>
        <width>40</width>
        <height>30</height>
@@ -4190,7 +4206,7 @@
     <widget class="QLabel" name="wl3">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -4212,7 +4228,7 @@
     <widget class="QPushButton" name="rsOt3">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -4230,12 +4246,13 @@
       <rect>
        <x>200</x>
        <y>190</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -4247,7 +4264,7 @@
     <widget class="QLineEdit" name="rsaScore3">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -4269,7 +4286,7 @@
     <widget class="QLineEdit" name="spread3">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>190</y>
        <width>45</width>
        <height>30</height>
@@ -4278,11 +4295,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore3">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>190</y>
        <width>30</width>
        <height>30</height>
@@ -4298,16 +4318,17 @@
     <widget class="QLabel" name="rsHome4">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>230</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -4358,7 +4379,7 @@
     <widget class="QLabel" name="record4">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>230</y>
        <width>40</width>
        <height>30</height>
@@ -4394,7 +4415,7 @@
     <widget class="QLabel" name="wl4">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -4416,7 +4437,7 @@
     <widget class="QPushButton" name="rsOt4">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -4434,12 +4455,13 @@
       <rect>
        <x>200</x>
        <y>230</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -4451,7 +4473,7 @@
     <widget class="QLineEdit" name="rsaScore4">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -4473,7 +4495,7 @@
     <widget class="QLineEdit" name="spread4">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>230</y>
        <width>45</width>
        <height>30</height>
@@ -4482,11 +4504,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore4">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>230</y>
        <width>30</width>
        <height>30</height>
@@ -4502,16 +4527,17 @@
     <widget class="QLabel" name="rsHome5">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>270</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -4562,7 +4588,7 @@
     <widget class="QLabel" name="record5">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>270</y>
        <width>40</width>
        <height>30</height>
@@ -4598,7 +4624,7 @@
     <widget class="QLabel" name="wl5">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -4620,7 +4646,7 @@
     <widget class="QPushButton" name="rsOt5">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -4638,12 +4664,13 @@
       <rect>
        <x>200</x>
        <y>270</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -4655,7 +4682,7 @@
     <widget class="QLineEdit" name="rsaScore5">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -4677,7 +4704,7 @@
     <widget class="QLineEdit" name="spread5">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>270</y>
        <width>45</width>
        <height>30</height>
@@ -4686,11 +4713,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore5">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>270</y>
        <width>30</width>
        <height>30</height>
@@ -4706,16 +4736,17 @@
     <widget class="QLabel" name="rsHome6">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>310</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -4766,7 +4797,7 @@
     <widget class="QLabel" name="record6">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>310</y>
        <width>40</width>
        <height>30</height>
@@ -4802,7 +4833,7 @@
     <widget class="QLabel" name="wl6">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -4824,7 +4855,7 @@
     <widget class="QPushButton" name="rsOt6">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -4842,12 +4873,13 @@
       <rect>
        <x>200</x>
        <y>310</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -4859,7 +4891,7 @@
     <widget class="QLineEdit" name="rsaScore6">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -4881,7 +4913,7 @@
     <widget class="QLineEdit" name="spread6">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>310</y>
        <width>45</width>
        <height>30</height>
@@ -4890,11 +4922,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore6">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>310</y>
        <width>30</width>
        <height>30</height>
@@ -4910,16 +4945,17 @@
     <widget class="QLabel" name="rsHome7">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>350</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -4970,7 +5006,7 @@
     <widget class="QLabel" name="record7">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>350</y>
        <width>40</width>
        <height>30</height>
@@ -5006,7 +5042,7 @@
     <widget class="QLabel" name="wl7">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -5028,7 +5064,7 @@
     <widget class="QPushButton" name="rsOt7">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -5046,12 +5082,13 @@
       <rect>
        <x>200</x>
        <y>350</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -5063,7 +5100,7 @@
     <widget class="QLineEdit" name="rsaScore7">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -5085,7 +5122,7 @@
     <widget class="QLineEdit" name="spread7">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>350</y>
        <width>45</width>
        <height>30</height>
@@ -5094,11 +5131,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore7">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>350</y>
        <width>30</width>
        <height>30</height>
@@ -5114,16 +5154,17 @@
     <widget class="QLabel" name="rsHome8">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>390</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -5174,7 +5215,7 @@
     <widget class="QLabel" name="record8">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>390</y>
        <width>40</width>
        <height>30</height>
@@ -5210,7 +5251,7 @@
     <widget class="QLabel" name="wl8">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -5232,7 +5273,7 @@
     <widget class="QPushButton" name="rsOt8">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -5250,12 +5291,13 @@
       <rect>
        <x>200</x>
        <y>390</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -5267,7 +5309,7 @@
     <widget class="QLineEdit" name="rsaScore8">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -5289,7 +5331,7 @@
     <widget class="QLineEdit" name="spread8">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>390</y>
        <width>45</width>
        <height>30</height>
@@ -5298,11 +5340,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore8">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>390</y>
        <width>30</width>
        <height>30</height>
@@ -5318,16 +5363,17 @@
     <widget class="QLabel" name="rsHome9">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>430</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -5378,7 +5424,7 @@
     <widget class="QLabel" name="record9">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>430</y>
        <width>40</width>
        <height>30</height>
@@ -5414,7 +5460,7 @@
     <widget class="QLabel" name="wl9">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -5436,7 +5482,7 @@
     <widget class="QPushButton" name="rsOt9">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -5454,12 +5500,13 @@
       <rect>
        <x>200</x>
        <y>430</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -5471,7 +5518,7 @@
     <widget class="QLineEdit" name="rsaScore9">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -5493,7 +5540,7 @@
     <widget class="QLineEdit" name="spread9">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>430</y>
        <width>45</width>
        <height>30</height>
@@ -5502,11 +5549,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore9">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>430</y>
        <width>30</width>
        <height>30</height>
@@ -5522,16 +5572,17 @@
     <widget class="QLabel" name="rsHome10">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>470</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -5582,7 +5633,7 @@
     <widget class="QLabel" name="record10">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>470</y>
        <width>40</width>
        <height>30</height>
@@ -5618,7 +5669,7 @@
     <widget class="QLabel" name="wl10">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -5640,7 +5691,7 @@
     <widget class="QPushButton" name="rsOt10">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -5658,12 +5709,13 @@
       <rect>
        <x>200</x>
        <y>470</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -5675,7 +5727,7 @@
     <widget class="QLineEdit" name="rsaScore10">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -5697,7 +5749,7 @@
     <widget class="QLineEdit" name="spread10">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>470</y>
        <width>45</width>
        <height>30</height>
@@ -5706,11 +5758,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore10">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>470</y>
        <width>30</width>
        <height>30</height>
@@ -5726,16 +5781,17 @@
     <widget class="QLabel" name="rsHome11">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>510</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -5786,7 +5842,7 @@
     <widget class="QLabel" name="record11">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>510</y>
        <width>40</width>
        <height>30</height>
@@ -5822,7 +5878,7 @@
     <widget class="QLabel" name="wl11">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -5844,7 +5900,7 @@
     <widget class="QPushButton" name="rsOt11">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -5862,12 +5918,13 @@
       <rect>
        <x>200</x>
        <y>510</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -5879,7 +5936,7 @@
     <widget class="QLineEdit" name="rsaScore11">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -5901,7 +5958,7 @@
     <widget class="QLineEdit" name="spread11">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>510</y>
        <width>45</width>
        <height>30</height>
@@ -5910,11 +5967,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore11">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>510</y>
        <width>30</width>
        <height>30</height>
@@ -5930,16 +5990,17 @@
     <widget class="QLabel" name="rsHome12">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>550</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -5990,7 +6051,7 @@
     <widget class="QLabel" name="record12">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>550</y>
        <width>40</width>
        <height>30</height>
@@ -6026,7 +6087,7 @@
     <widget class="QLabel" name="wl12">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -6048,7 +6109,7 @@
     <widget class="QPushButton" name="rsOt12">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -6066,12 +6127,13 @@
       <rect>
        <x>200</x>
        <y>550</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -6083,7 +6145,7 @@
     <widget class="QLineEdit" name="rsaScore12">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -6105,7 +6167,7 @@
     <widget class="QLineEdit" name="spread12">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>550</y>
        <width>45</width>
        <height>30</height>
@@ -6114,11 +6176,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore12">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>550</y>
        <width>30</width>
        <height>30</height>
@@ -6134,16 +6199,17 @@
     <widget class="QLabel" name="rsHome13">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>590</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -6194,7 +6260,7 @@
     <widget class="QLabel" name="record13">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>590</y>
        <width>40</width>
        <height>30</height>
@@ -6230,7 +6296,7 @@
     <widget class="QLabel" name="wl13">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -6252,7 +6318,7 @@
     <widget class="QPushButton" name="rsOt13">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -6270,12 +6336,13 @@
       <rect>
        <x>200</x>
        <y>590</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -6287,7 +6354,7 @@
     <widget class="QLineEdit" name="rsaScore13">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -6309,7 +6376,7 @@
     <widget class="QLineEdit" name="spread13">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>590</y>
        <width>45</width>
        <height>30</height>
@@ -6318,11 +6385,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore13">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>590</y>
        <width>30</width>
        <height>30</height>
@@ -6338,16 +6408,17 @@
     <widget class="QLabel" name="rsHome14">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>630</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -6398,7 +6469,7 @@
     <widget class="QLabel" name="record14">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>630</y>
        <width>40</width>
        <height>30</height>
@@ -6434,7 +6505,7 @@
     <widget class="QLabel" name="wl14">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -6456,7 +6527,7 @@
     <widget class="QPushButton" name="rsOt14">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -6474,12 +6545,13 @@
       <rect>
        <x>200</x>
        <y>630</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -6491,7 +6563,7 @@
     <widget class="QLineEdit" name="rsaScore14">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -6513,7 +6585,7 @@
     <widget class="QLineEdit" name="spread14">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>630</y>
        <width>45</width>
        <height>30</height>
@@ -6522,11 +6594,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore14">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>630</y>
        <width>30</width>
        <height>30</height>
@@ -6542,16 +6617,17 @@
     <widget class="QLabel" name="rsHome15">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>670</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -6602,7 +6678,7 @@
     <widget class="QLabel" name="record15">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>670</y>
        <width>40</width>
        <height>30</height>
@@ -6638,7 +6714,7 @@
     <widget class="QLabel" name="wl15">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -6660,7 +6736,7 @@
     <widget class="QPushButton" name="rsOt15">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -6678,12 +6754,13 @@
       <rect>
        <x>200</x>
        <y>670</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -6695,7 +6772,7 @@
     <widget class="QLineEdit" name="rsaScore15">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -6717,7 +6794,7 @@
     <widget class="QLineEdit" name="spread15">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>670</y>
        <width>45</width>
        <height>30</height>
@@ -6726,11 +6803,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore15">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>670</y>
        <width>30</width>
        <height>30</height>
@@ -6746,16 +6826,17 @@
     <widget class="QLabel" name="rsHome16">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>710</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -6806,7 +6887,7 @@
     <widget class="QLabel" name="record16">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>710</y>
        <width>40</width>
        <height>30</height>
@@ -6842,7 +6923,7 @@
     <widget class="QLabel" name="wl16">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -6864,7 +6945,7 @@
     <widget class="QPushButton" name="rsOt16">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -6882,12 +6963,13 @@
       <rect>
        <x>200</x>
        <y>710</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -6899,7 +6981,7 @@
     <widget class="QLineEdit" name="rsaScore16">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -6921,7 +7003,7 @@
     <widget class="QLineEdit" name="spread16">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>710</y>
        <width>45</width>
        <height>30</height>
@@ -6930,11 +7012,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore16">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>710</y>
        <width>30</width>
        <height>30</height>
@@ -6950,16 +7035,17 @@
     <widget class="QLabel" name="rsHome17">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>510</x>
        <y>750</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
-       <bold>true</bold>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
       </font>
      </property>
      <property name="text">
@@ -7010,7 +7096,7 @@
     <widget class="QLabel" name="record17">
      <property name="geometry">
       <rect>
-       <x>730</x>
+       <x>810</x>
        <y>750</y>
        <width>40</width>
        <height>30</height>
@@ -7046,7 +7132,7 @@
     <widget class="QLabel" name="wl17">
      <property name="geometry">
       <rect>
-       <x>690</x>
+       <x>770</x>
        <y>750</y>
        <width>30</width>
        <height>30</height>
@@ -7068,7 +7154,7 @@
     <widget class="QPushButton" name="rsOt17">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>460</x>
        <y>750</y>
        <width>30</width>
        <height>30</height>
@@ -7086,12 +7172,13 @@
       <rect>
        <x>200</x>
        <y>750</y>
-       <width>160</width>
+       <width>200</width>
        <height>30</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <pointsize>14</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -7103,7 +7190,7 @@
     <widget class="QLineEdit" name="rsaScore17">
      <property name="geometry">
       <rect>
-       <x>370</x>
+       <x>410</x>
        <y>750</y>
        <width>30</width>
        <height>30</height>
@@ -7125,7 +7212,7 @@
     <widget class="QLineEdit" name="spread17">
      <property name="geometry">
       <rect>
-       <x>790</x>
+       <x>870</x>
        <y>750</y>
        <width>45</width>
        <height>30</height>
@@ -7134,11 +7221,14 @@
      <property name="text">
       <string>+14.5</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
     <widget class="QLineEdit" name="rshScore17">
      <property name="geometry">
       <rect>
-       <x>640</x>
+       <x>720</x>
        <y>750</y>
        <width>30</width>
        <height>30</height>
@@ -7171,7 +7261,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1898</width>
+     <width>2141</width>
      <height>21</height>
     </rect>
    </property>
