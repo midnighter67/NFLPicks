@@ -74,6 +74,10 @@ class UI(QMainWindow):
         self.rams = self.findChild(QGroupBox, "ramsSchedule")
         
         # slate group box widgets
+        self.wc = self.findChild(QLabel, "wcLabel")
+        self.div = self.findChild(QLabel, "divLabel")
+        self.conf = self.findChild(QLabel, "conLabel")
+        self.sb = self.findChild(QLabel, "sbLabel")
         for row in range(0,20):
             # day labels
             getattr(self, "day" + str(row)).findChild(QLabel,"day" + str(row))
@@ -129,13 +133,23 @@ class UI(QMainWindow):
             getattr(self, "rsaScore" + str(row)).findChild(QLabel,"rsaScore" + str(row))
             
             # home score line edit boxes
-            getattr(self, "rshScore" + str(row)).findChild(QLabel,"rshScore" + str(row))          
+            getattr(self, "rshScore" + str(row)).findChild(QLabel,"rshScore" + str(row))   
+        # schedule header
+        self.hWeek = self.findChild(QLabel, "rsHeader0")
+        self.hDate = self.findChild(QLabel, "rsHeader1")   
+        self.hAway = self.findChild(QLabel, "rsHeader2")
+        self.hAwayScore = self.findChild(QLabel, "rsHeader3")
+        self.hOvertime = self.findChild(QLabel, "rsHeader4")
+        self.hHome = self.findChild(QLabel, "rsHeader5")
+        self.hHomeScore = self.findChild(QLabel, "rsHeader6")
+        self.hWinLoss = self.findChild(QLabel, "rsHeader7")  
+        self.hSpread = self.findChild(QLabel, "rsHeader8")
         # *********************************** END WIDGETS *************************************
         
         # *********************************** ACTIONS *****************************************
         # populate combo boxes
         self.year.addItems([str(year) for year in range(2021, 2025)])
-        self.week.addItems([str(week) for week in range(1,19)] + ['WC', 'DIV', 'CONF', 'SB'])
+        self.week.addItems([str(week) for week in range(1,19)] + ['Postseason'])
         
         # set combo boxes to editable (to center justify)
         self.year.setEditable(True)
@@ -152,6 +166,12 @@ class UI(QMainWindow):
         # setting combo box line edit to read only
         year_line_edit.setReadOnly(True)
         week_line_edit.setReadOnly(True)
+        
+        # set geometry for slate postseason labels
+        self.wc.setGeometry(365, 35, 100, 30)
+        self.div.setGeometry(365, 315, 100, 30)
+        self.conf.setGeometry(365, 515, 100, 30)
+        self.sb.setGeometry(365, 635, 100, 30)
         
         # attach click functions
         self.submit.clicked.connect(self.getView)
@@ -213,7 +233,12 @@ class UI(QMainWindow):
         self.home.setGeometry(x,yHome,100,30)
         self.submit.setText(submitText)
         
-    
+    def postseasonLabels(self, status):
+            self.wc.setVisible(status)
+            self.div.setVisible(status)
+            self.conf.setVisible(status)
+            self.sb.setVisible(status)
+        
     def viewSlate(self):
         # Updates the window geometry; hides view/edit, schedule, and stats buttons, shows the combo boxes and home button;
         #   displays an empty slate
@@ -225,6 +250,8 @@ class UI(QMainWindow):
         self.edit.setVisible(False)
         self.stats.setVisible(False)
         self.schedule.setVisible(False)
+        # hide group boxes
+        self.ramsSchedule.setVisible(False)
         # show edit buttons
         self.submit.setVisible(True)
         self.yearLabel.setVisible(True)
@@ -246,12 +273,15 @@ class UI(QMainWindow):
         self.setGeometry(self.x()+1, 50, 1142, 870)  # 1062
         self.setFixedWidth(1142)
         self.sidebarButtons('schedule')
+        self.postseasonLabels(False)
         # hide home buttons
         self.edit.setVisible(False)
         self.stats.setVisible(False)
         self.schedule.setVisible(False)
         self.weekLabel.setVisible(False)
         self.week.setVisible(False)
+        # hide group boxes
+        self.slate.setVisible(False)
         # show edit buttons
         self.submit.setVisible(True)
         self.yearLabel.setVisible(True)
@@ -269,33 +299,55 @@ class UI(QMainWindow):
         # Gets/displays the matchups/scores/picks/results for the season and week selected with the year and week combo boxes
         
         self.resetSlate()
+        post = True if self.week.currentText() == "Postseason" else False
+        self.postseasonLabels(post)
         # set title
         week = self.week.currentText()
         year = self.year.currentText()
-        title = f"{year} - week {week}"
+        title = (f"{year} - week {week}") if not post else (f"{year} Postseason")
         self.slate.setTitle(title)
         
-        space = 0
+        space = 1 if post else 0
         previous = ""
-        right = 0
-        wrong = 0
+        previousRound = ""
+        
         # get data from database using the values for season and week from combo boxes
-        slate = session.query(games).filter(and_(games.columns.season == year, games.columns.week == week))\
-                                    .order_by(games.columns.gameday)\
-                                    .order_by(games.columns.time)
+        if post:
+            slate = session.query(games).filter(games.columns.season == year)\
+                                        .filter(games.columns.type != 'REG')\
+                                        .order_by(games.columns.gameday)\
+                                        .order_by(games.columns.time)
+        else:
+            slate = session.query(games).filter(and_(games.columns.season == year, games.columns.week == week))\
+                                        .order_by(games.columns.gameday)\
+                                        .order_by(games.columns.time)
         # print(slate)
         
         for index, game in enumerate(slate):
             day = game[6]
-            if day != previous:
-                # print the abbreviated day on the slate
-                if index !=0:
-                    space += 1
-                getattr(self, "day" + str(index + space)).setText(day[:3])
+            rd = game[3]
+            # group by round if postseason
+            # if post and rd != previousRound and index !=0:
+            #     space += 1
+            # group by day if regular season
+            if not post:
+                if day != previous:
+                    # print the abbreviated day on the slate
+                    if index !=0:
+                        space += 1
+                    getattr(self, "day" + str(index + space)).setText(day[:3])
+                else:
+                    if day == "Sunday" and int(game[7][:2]) >= 18:
+                        # print 'night' in 'day' slate column if day is Sunday and time is 6pm or later
+                        getattr(self, "day" + str(index + space)).setText("Night")
             else:
-                if day == "Sunday" and int(game[7][:2]) >= 18:
-                    # print 'night' in 'day' slate column if day is Sunday and time is 6pm or later
-                    getattr(self, "day" + str(index + space)).setText("Night")
+                if rd != previousRound:
+                    if index != 0:
+                        space += 1
+                    getattr(self, "day" + str(index + space)).setText(day[:3])
+                elif day != previous:
+                    getattr(self, "day" + str(index + space)).setText(day[:3])
+                
             # add away team and score to the slate 
             getattr(self, "away" + str(index + space)).setText(teams[game[8]])
             getattr(self, "aScore" + str(index + space)).setVisible(True)
@@ -332,14 +384,29 @@ class UI(QMainWindow):
                 result = ''
             getattr(self, "result" + str(index + space)).setText(result)
             previous = day
+            previousRound = rd
         # weekly and year-to-date stats
-        rightWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 1).count()
-        wrongWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 0).count()
-        rightToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 1).count()
-        wrongToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 0).count()
-        self.recordWeek.setText(str(rightWeek) + " - " + str(wrongWeek))
+        if post:
+            
+            rightToDate = session.query(games).filter(games.columns.season == year)\
+                                              .filter(and_(games.columns.week >= 19, games.columns.week <= 22))\
+                                              .filter(games.columns.result == 1)\
+                                              .count()
+            wrongToDate = session.query(games).filter(games.columns.season == year)\
+                                              .filter(and_(games.columns.week >= 19, games.columns.week <= 22))\
+                                              .filter(games.columns.result == 0)\
+                                              .count()
+        else:
+            rightWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 1).count()
+            wrongWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 0).count()
+            rightToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 1).count()
+            wrongToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 0).count()
+            self.recordWeek.setText(str(rightWeek) + " - " + str(wrongWeek))
         self.recordToDate.setText(str(rightToDate) + " - " + str(wrongToDate))
-        self.percentage.setText(f"{rightToDate/(rightToDate + wrongToDate) * 100:.1f}" + "%")   
+        try:
+            self.percentage.setText(f"{rightToDate/(rightToDate + wrongToDate) * 100:.1f}" + "%")   
+        except:
+            print(self.percentage.setText(""))
         
     def getRams(self):
         # Gets/displays the the Rams schedule, scores, spread, etc. for the selected year
@@ -348,7 +415,10 @@ class UI(QMainWindow):
         # set title
         year = self.year.currentText()
         title = "Rams - " + f"{year}"
-        self.ramsSchedule.setTitle(title)   
+        self.ramsSchedule.setTitle(title)
+        
+        # update header
+        self.hWeek.setText("week")   
         
         # get data from database using the values for season and week from combo boxes
         schedule = session.query(games).filter(and_(games.columns.season == year, games.columns.type == 'REG'))\
@@ -425,6 +495,20 @@ class UI(QMainWindow):
             getattr(self, "rsWeek" + str(index + space)).setText(str(game[4]))
             previous = week
             
+    def getPostseason(self):
+         # Gets/displays the the postseason schedule, scores, spread, etc. for the selected year
+        self.resetSlate()
+        self.resetSchedule()
+        self.viewSchedule()
+        
+        # set title
+        year = self.year.currentText()
+        title = f"{year}" + " postseason"
+        self.ramsSchedule.setTitle(title) 
+        
+        # update header
+        self.hWeek.setText("round")
+            
     def otToggle(self):
         ref = self.sender()
         btn = ref.objectName()
@@ -437,13 +521,16 @@ class UI(QMainWindow):
         # Update the database columns aScore, hScore, ot, pick for the current slate after clicking the save button
         
         if self.slate.isVisible():
+            rd = 0
             for row in range(0,20):
                 pick = None
                 if getattr(self, "away" + str(row)).text() != '' and getattr(self, "home" + str(row)).text() != '':
+                    week = str(19 + rd) if self.week.currentText() == 'Postseason' else self.week.currentText().rjust(2,'0')
                     # Build the gameid from data in the slate row
                     a = [key for key, value in teams.items() if value == getattr(self, "away" + str(row)).text()]
                     h = [key for key, value in teams.items() if value == getattr(self, "home" + str(row)).text()]
-                    id = self.year.currentText() + "_" + self.week.currentText().rjust(2,'0') + "_" + a[0] + "_" + h[0]
+                    id = self.year.currentText() + "_" + week + "_" + a[0] + "_" + h[0]
+                    print("id = ", id, "; rd = ", rd)
                     # set 'pick' value based on the boldness of 'away' or 'home'
                     if getattr(self, "away" + str(row)).font().bold():
                         pick = "a"
@@ -465,9 +552,24 @@ class UI(QMainWindow):
                     else:
                         statement = update(games).values(ot=overtime, pick=pick).where(games.columns.gameid==id)
                     session.execute(statement)
+                else:
+                    rd += 1
             session.commit()
-        self.getSlate()
-                    
+            self.getSlate()
+        elif self.ramsSchedule.isVisible():
+            for row in range(0,18):
+                if getattr(self, "rsHome" + str(row)).text() != '' and getattr(self, "spread" + str(row)).text() != '':
+                    # Build the gameid from data in the slate row
+                    a = [key for key, value in teams.items() if value == getattr(self, "rsAway" + str(row)).text()]
+                    h = [key for key, value in teams.items() if value == getattr(self, "rsHome" + str(row)).text()]
+                    week = getattr(self, "rsWeek" + str(row)).text()
+                    id = self.year.currentText() + "_" + week + "_" + a[0] + "_" + h[0]
+                    spread = float(getattr(self, "spread" + str(row)).text())
+                    statement = update(games).values(spread=spread).where(games.columns.gameid==id)
+                    # print('id = ', id, ", spread = ", spread)
+                    session.execute(statement)
+            session.commit()
+            self.getRams()
     
     def select(self):
         # Toggles the boldness of the selected button text and unbolds the button text of the opponent button if
@@ -530,6 +632,7 @@ class UI(QMainWindow):
         self.recordWeek.setVisible(False)
         self.recordToDate.setVisible(False)
         self.percentage.setVisible(False)
+        self.postseasonLabels(False)
         # test buttons
         self.toggle.setVisible(False)
         self.toggleText.setVisible(False)
@@ -548,6 +651,7 @@ class UI(QMainWindow):
         self.recordWeek.setText('')
         self.recordToDate.setText('')
         self.percentage.setText('')
+        self.postseasonLabels(False)
         for row in range(0,20):
             getattr(self, "aScore" + str(row)).setText('')
             getattr(self, "hScore" + str(row)).setText('')

@@ -45,6 +45,12 @@ styles = {
     6:"Cleanlooks"
 }
 
+rounds = {
+    0:"WC",
+    1:"DIV",
+    2:"CON",
+    3:"SB"
+}
 
 
 # today = d.datetime.today()
