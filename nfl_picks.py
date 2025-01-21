@@ -168,10 +168,10 @@ class UI(QMainWindow):
         week_line_edit.setReadOnly(True)
         
         # set geometry for slate postseason labels
-        self.wc.setGeometry(365, 35, 100, 30)
-        self.div.setGeometry(365, 315, 100, 30)
-        self.conf.setGeometry(365, 515, 100, 30)
-        self.sb.setGeometry(365, 635, 100, 30)
+        self.wc.setGeometry(365, 35, 110, 30)
+        self.div.setGeometry(365, 315, 110, 30)
+        self.conf.setGeometry(365, 515, 110, 30)
+        self.sb.setGeometry(365, 635, 110, 30)
         
         # attach click functions
         self.submit.clicked.connect(self.getView)
@@ -324,6 +324,7 @@ class UI(QMainWindow):
         # print(slate)
         
         for index, game in enumerate(slate):
+            result = ''
             day = game[6]
             rd = game[3]
             # group by round if postseason
@@ -376,10 +377,12 @@ class UI(QMainWindow):
                             text-align: left;
                         }
                 """)
-            if game[18] == 0:
-                result = 'X'
-            elif game[18] == 1:
-                result = 'C'
+    
+            if game[17] != None:
+                if game[18] == 0:
+                    result = 'X'
+                elif game[18] == 1:
+                    result = 'C'   
             else:
                 result = ''
             getattr(self, "result" + str(index + space)).setText(result)
@@ -387,20 +390,37 @@ class UI(QMainWindow):
             previousRound = rd
         # weekly and year-to-date stats
         if post:
-            
             rightToDate = session.query(games).filter(games.columns.season == year)\
                                               .filter(and_(games.columns.week >= 19, games.columns.week <= 22))\
                                               .filter(games.columns.result == 1)\
+                                              .filter(games.columns.pick != None)\
                                               .count()
             wrongToDate = session.query(games).filter(games.columns.season == year)\
                                               .filter(and_(games.columns.week >= 19, games.columns.week <= 22))\
                                               .filter(games.columns.result == 0)\
+                                              .filter(games.columns.pick != None)\
                                               .count()
         else:
-            rightWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 1).count()
-            wrongWeek = session.query(games).where(games.columns.season == year).where(games.columns.week == week).where(games.columns.result == 0).count()
-            rightToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 1).count()
-            wrongToDate = session.query(games).where(games.columns.season == year).where(games.columns.week <= week).where(games.columns.result == 0).count()
+            rightWeek = session.query(games).filter(games.columns.season == year)\
+                                            .filter(games.columns.week == week)\
+                                            .filter(games.columns.result == 1)\
+                                            .filter(games.columns.pick != None)\
+                                            .count()
+            wrongWeek = session.query(games).filter(games.columns.season == year)\
+                                            .filter(games.columns.week == week)\
+                                            .filter(games.columns.result == 0)\
+                                            .filter(games.columns.pick != None)\
+                                            .count()
+            rightToDate = session.query(games).filter(games.columns.season == year)\
+                                              .filter(games.columns.week <= week)\
+                                              .filter(games.columns.result == 1)\
+                                              .filter(games.columns.pick != None)\
+                                              .count()
+            wrongToDate = session.query(games).filter(games.columns.season == year)\
+                                              .filter(games.columns.week <= week)\
+                                              .filter(games.columns.result == 0)\
+                                              .filter(games.columns.pick != None)\
+                                              .count()
             self.recordWeek.setText(str(rightWeek) + " - " + str(wrongWeek))
         self.recordToDate.setText(str(rightToDate) + " - " + str(wrongToDate))
         try:
@@ -525,7 +545,9 @@ class UI(QMainWindow):
             for row in range(0,20):
                 pick = None
                 if getattr(self, "away" + str(row)).text() != '' and getattr(self, "home" + str(row)).text() != '':
-                    week = str(19 + rd) if self.week.currentText() == 'Postseason' else self.week.currentText().rjust(2,'0')
+                    # week starts at 18 (plus rd) for postseason because it will increment immediately due to first row
+                    #  being 'wild card' label
+                    week = str(18 + rd) if self.week.currentText() == 'Postseason' else self.week.currentText().rjust(2,'0')
                     # Build the gameid from data in the slate row
                     a = [key for key, value in teams.items() if value == getattr(self, "away" + str(row)).text()]
                     h = [key for key, value in teams.items() if value == getattr(self, "home" + str(row)).text()]
@@ -548,6 +570,7 @@ class UI(QMainWindow):
                             case _:
                                 result = 0
                         # update database: aScore, hScore, ot, pick, result
+                        # print("ascore = ", aScore, "; hScore = ", hScore, "; ot = ", overtime, "; pick = ", pick, "; result = ", result, "; gameid = ", id)
                         statement = update(games).values(ascore=aScore, hscore=hScore, ot=overtime, pick=pick, result=result).where(games.columns.gameid==id)
                     else:
                         statement = update(games).values(ot=overtime, pick=pick).where(games.columns.gameid==id)
@@ -570,6 +593,7 @@ class UI(QMainWindow):
                     session.execute(statement)
             session.commit()
             self.getRams()
+            print("Saved!")
     
     def select(self):
         # Toggles the boldness of the selected button text and unbolds the button text of the opponent button if

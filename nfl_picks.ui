@@ -1815,7 +1815,7 @@
       </font>
      </property>
      <property name="text">
-      <string> </string>
+      <string/>
      </property>
      <property name="flat">
       <bool>true</bool>
@@ -7260,14 +7260,14 @@
      <rect>
       <x>850</x>
       <y>630</y>
-      <width>100</width>
+      <width>110</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Courier New</family>
-      <pointsize>12</pointsize>
+      <pointsize>14</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -7284,14 +7284,14 @@
      <rect>
       <x>850</x>
       <y>600</y>
-      <width>100</width>
+      <width>110</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Courier New</family>
-      <pointsize>12</pointsize>
+      <pointsize>14</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -7308,14 +7308,14 @@
      <rect>
       <x>850</x>
       <y>570</y>
-      <width>100</width>
+      <width>110</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Courier New</family>
-      <pointsize>12</pointsize>
+      <pointsize>14</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -7332,14 +7332,14 @@
      <rect>
       <x>850</x>
       <y>540</y>
-      <width>100</width>
+      <width>110</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Courier New</family>
-      <pointsize>12</pointsize>
+      <pointsize>14</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
