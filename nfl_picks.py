@@ -265,6 +265,9 @@ class UI(QMainWindow):
         self.recordWeek.setVisible(True)
         self.recordToDate.setVisible(True)
         self.percentage.setVisible(True)
+        # update year combo box
+        self.year.clear()
+        self.year.addItems([str(year) for year in range(2021, 2025)])
         
     def viewSchedule(self):
         # Updates the window geometry; hides view/edit, schedule, and stats buttons; shows the year combo box and home button;
@@ -290,6 +293,10 @@ class UI(QMainWindow):
         # self.week.setVisible(True)
         self.home.setVisible(True)
         self.ramsSchedule.setVisible(True)
+        # update year combo box
+        self.year.clear()
+        self.year.addItems([str(year) for year in range(1999, 2025)])
+        
         self.resetSchedule()
     
     def getStats(self):
@@ -442,7 +449,8 @@ class UI(QMainWindow):
         
         # get data from database using the values for season and week from combo boxes
         schedule = session.query(games).filter(and_(games.columns.season == year, games.columns.type == 'REG'))\
-                                       .filter(or_(games.columns.home == 'LA', games.columns.away == 'LA'))\
+                                       .filter(or_(games.columns.home == 'LA', games.columns.away == 'LA',\
+                                                   games.columns.home == 'STL',games.columns.away == 'STL'))\
                                        .order_by(games.columns.week)
         space = 0
         previous = 0
@@ -457,8 +465,8 @@ class UI(QMainWindow):
                 getattr(self, "rsWeek" + str(index + space)).setText(str(week - 1))
                 getattr(self, "rsAway" + str(index + space)).setText("BYE")
                 space += 1
-            # day
-            if (weekday == 'Sunday' and game[7][:2] >= '18') or weekday != 'Sunday':
+            # day - season = 1999 has time = None for all games
+            if game[2] != 1999 and ((weekday == 'Sunday' and game[7][:2] >= '18') or weekday != 'Sunday'):
                 getattr(self, "rsDay" + str(index + space)).setText(game[6][:3])
                 
             # date
@@ -484,7 +492,7 @@ class UI(QMainWindow):
                 if game[9] == game[11]:
                     getattr(self, "wl" + str(index + space)).setText("T")
                     t += 1
-                elif game[8] ==  "LA":
+                elif game[8] ==  "LA" or game[8] == "STL":
                     if game[9] > game[11]:
                         getattr(self, "wl" + str(index + space)).setText("W")
                         w += 1

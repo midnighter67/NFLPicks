@@ -27,10 +27,13 @@ teams = {
     "NO" : "New Orleans", 
     "NYG": "New York Giants",
     "NYJ": "New York Jets",
+    "OAK": "Oakland",
     "PHI": "Philadelphia", 
     "PIT": "Pittsburgh",
+    "SD" : "San Diego",
     "SEA": "Seattle",
     "SF" : "San Francisco",
+    "STL": "St. Louis Rams",
     "TB" : "Tampa Bay",
     "TEN": "Tennessee",
     "WAS": "Washington"
