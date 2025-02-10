@@ -560,7 +560,6 @@ class UI(QMainWindow):
                     a = [key for key, value in teams.items() if value == getattr(self, "away" + str(row)).text()]
                     h = [key for key, value in teams.items() if value == getattr(self, "home" + str(row)).text()]
                     id = self.year.currentText() + "_" + week + "_" + a[0] + "_" + h[0]
-                    print("id = ", id, "; rd = ", rd)
                     # set 'pick' value based on the boldness of 'away' or 'home'
                     if getattr(self, "away" + str(row)).font().bold():
                         pick = "a"
@@ -806,7 +805,7 @@ class UI(QMainWindow):
        
 app = QApplication(sys.argv)
 app.setStyle(styles[1])
-UIWindow = UI()
+UIWindow = UI()  # what is this line for?
 app.exec_()
 session.close()
 
